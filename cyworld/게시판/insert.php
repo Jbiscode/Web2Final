@@ -35,6 +35,5 @@
     내용 : <textarea name="content" cols="40" rows="20"></textarea>
     <button>전송</button>
 </form>
-
 </body>
 </html>
