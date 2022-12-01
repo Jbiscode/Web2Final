@@ -2,8 +2,37 @@
 
 include "../inc/dbconn.php";
 
+$userpw=$_POST['comment_pw'];
+// $userpw=$_POST['userpw']
+$userid = $_POST['comment_userid'];
+
+//3. 쿼리 실행
+$query = "SELECT * FROM member WHERE userid = '$userid'";
+$result = $connect->query($query) or die($connect->errorInfo());
+$man = $result->fetch();
+if( !$man ){
+    ?>
+    <script>
+        alert( "존재하지 않는 아이디입니다." );
+        history.back();
+    </script>
+<?php
+    exit;
+}
+
+if( $userpw !== $man["userpw"] ){
+    ?>
+    <script>
+        alert( "비밀번호가 틀렸습니다." );
+        history.back();
+    </script>
+<?php
+    exit;
+}
+
+
 $originSeq = $_POST["origin_seq"];
-$writer_name = $_POST["comment_writer_name"];
+$writer_name = $man["username"];
 $content = $_POST["comment_content"];
 
 

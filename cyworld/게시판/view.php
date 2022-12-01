@@ -88,9 +88,10 @@ $resultData = $result->fetch();
         ?>
         </ul>
         <div class="comment_insert_wrap">
-            <form action="comment_insert_confirm.php" method="post" onsubmit="return commentTest()">
+            <form name="commentform" action="comment_insert_confirm.php" method="post" onsubmit="return commentTest()">
             <input type="hidden" name="origin_seq" value="<?php echo $seq; ?>"><br>
-            작성자 : <input type="text" name="comment_writer_name"><br>
+            작성자 아이디 : <input type="text" name="comment_userid"><br>
+            비밀번호 : <input type="password" name="comment_pw"><br>
             내용 : <textarea name="comment_content" cols="30" rows="10"></textarea><br>
             <button>댓글등록</button>
             </form>

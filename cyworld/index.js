@@ -132,3 +132,22 @@ menuReset = () => {
     document.getElementById("menuVisit").style="color:white;background-color:#298eb5"
     document.getElementById("menuAll").style="color:white;background-color:#298eb5"
 }
+
+commentTest = () =>{
+    if( document.commentform.comment_userid.value == "" ){
+        alert( "아이디는 필수 항목입니다.");
+        document.commentform.comment_userid.focus();
+        return false;
+    }
+    if( document.commentform.comment_pw.value == "" ){
+        alert( "비밀번호는 필수 항목입니다.");
+        document.commentform.comment_pw.focus();
+        return false;
+    }
+    if( document.commentform.comment_content.value == "" ){
+        alert( "내용은 필수 항목입니다.");
+        document.commentform.comment_content.focus();
+        return false;
+    }
+    return true;
+}
