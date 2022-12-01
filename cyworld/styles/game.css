@@ -1,0 +1,111 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+.wrapper{
+    width: 100%;
+    height: 100%;
+    padding: 20px 30px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.wrapper__header{
+    width: 100%;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.header__title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.title{
+    color: #55b2d4;
+    font-size: 14px;
+    font-weight: 700;
+}
+.subtitle{
+    font-size: 8px;
+    padding-left: 5px;
+}
+.divided__line{
+    width: 100%;
+    border-top: 1px solid gray;
+}
+.game__container{
+    width: 222px;
+    height: 168px;
+    border-radius: 15px;
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f6f6f6;
+}
+.game__title{
+    font-size: 11px;
+    font-weight: 900;
+}
+.game__subtitle{
+    font-size: 10px;
+    color: #999999;
+    font-weight: 700;
+}
+.word__text{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.textbox{
+    width: 136px;
+    height: 24px;
+    color: #999999;
+}
+.search{
+    width: 38px;
+    height: 24px;
+    font-size: 11px;
+    margin-left: 8px;
+    background-color: #ffffff;
+    border: 1.5px solid black;
+    border-radius: 5px;
+}
+.word__result{
+    font-size: 11px;
+    color: #999999;
+}
+
+.game__number{
+    width: 130px;
+    height: 21px;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    background-color: #FFE400;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#lotto__number{
+    font-size: 10px;
+    font-weight: 900;
+}
+.game__lotto{
+    width: 62px;
+    height: 24px;
+    font-weight: 500;
+    background-color: #ffffff;
+    border: 1px solid black;
+    border-radius: 5px;
+}

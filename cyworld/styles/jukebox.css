@@ -1,0 +1,146 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+.juke__wrap{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.juke__first{
+    width: 464px;
+    height: 203px;
+    margin: 15px 20px 0px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.juke__second{
+    width: 464px;
+    height: 146px;
+    /* background-color: pink; */
+    margin: 0px 20px 30px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.juke__title{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+.title{
+    font-size: 13px;
+    font-weight: 500;
+    color:#55B2D4;
+}
+.subtitle{
+    font-size: 10px;
+    margin-left: 5px;
+
+}
+.juke__line{
+    border-bottom: 1px solid gray;
+    margin-bottom: 18px;
+}
+
+
+.juke__body{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.juke__list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.juke__pic{
+    width: 120px;
+    height: 120px;
+    margin: 0px 18px 0px 18px;
+}
+
+.juke__music__name{
+    font-size: 11px;
+    color:  #0F465E;
+    margin-top: 10px;
+    font-weight: 800;
+}
+.juke__singer__name{
+    font-size: 10px;
+    color: #999999;
+}
+
+.juke__graph{
+    padding: 0px;
+    margin: 0px;
+}
+.th{
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+    background-color: #EEEEEE;
+}
+.tr{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px dashed black;
+}
+
+table{
+    width: 464px;
+}
+
+.table__1,.table__2,.table__3{
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 25px;
+    color: #999999;
+    font-weight: 900;
+}
+.table__3{
+    padding-left: 220px;
+}
+.th__check,.tr__check{
+    margin-left: 15px;
+}
+.table__order{
+    font-size: 10px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    margin-left: 31px;
+
+}
+.table__data1{
+    width: 120px;
+    font-size: 10px;
+    color: #0F465E;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    font-weight: 550;
+}
+.table__data{
+    font-size: 10px;
+    color: #0F465E;
+    display: flex;
+    align-items: center;
+    margin-left: 120px;
+    font-weight: 550;
+}

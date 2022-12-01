@@ -1,0 +1,217 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    
+}
+
+.background{
+    width: 1024px;
+    height: 600px;
+    background-image: url("/cyworld/images/background.png");
+    padding: 20px 0px 0px 20px;
+    background-repeat : no-repeat;
+    background-size :cover
+    /* background-repeat: no-repeat; */
+}
+
+.outerbox{
+    width: 808px;
+    height: 544px;
+    background-image: url("/cyworld/images/outerbox.png");
+    /* background-repeat: no-repeat; */
+    background-size : cover;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    padding: 32px 0px 0px 32px;
+}
+
+
+/*********** 홈 UI 왼쪽 */
+
+
+.wrapper__left{
+    width: 208px;
+    height: 472px;
+    
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
+    margin-left: 3px;
+    margin-right: 7px;
+}
+.wrapper__left__header{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.today{
+    padding: 10px 0px 0px 0px;
+    font-size: 9px;
+    color: black;
+}
+.zero{
+    font-size: 11px;
+    color: red;
+}
+.count{
+    font-size: 11px;
+}
+
+
+
+
+
+
+
+
+.wrapper__left__body{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px 30px 0px 30px;
+    border: 1px solid gray;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.left__body__header{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.left__body__header__gray{
+    width: 148px;
+    height: 133px;
+    background-color: #C4C4C4;;
+}
+
+.left__body__header__line{
+    border-top: 1px dotted black;
+    margin: 12px;
+}
+.left__body__profile{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+}
+.profile__detail{
+    color: #999999;
+    font-size: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.profile__detail > span {
+    padding-left: 10px;
+}
+.fas,.fab{
+    color: black;
+    margin-right: 10px;
+    width: 5px;
+    height: 5px;
+}
+.left__body__footer{
+    width: 100%;
+    margin-bottom: 30px;
+    margin-top: 100px;
+}
+.wrapper__feel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+.feel__title {
+    font-size: 11px;
+    margin-bottom: 5px;
+    color: gray;
+}
+
+
+
+/********** 홈 UI오른쪽 */
+
+
+.wrapper__right{
+    width: 524px;
+    height: 472px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-left: 5px;
+}
+.wrapper__right__header{
+    width: 510px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0px 14px;
+    color: #55B2D4;
+}
+.right__header__title{
+    font-size: 16px;
+    font-weight:bold;
+}
+.right__header__setting{
+    font-size: 9px;
+
+}
+.wrapper__right__body{
+    width: 510px;
+    height: 445px;
+    border: 1px solid gray;
+    border-radius: 15px;
+    background-color: white;
+    
+}
+iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.navigation{
+    width: 62px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    justify-content: space-between;
+
+    position: absolute;
+    top: 110px;
+    left: 784px;
+
+}
+
+.navigation__item{
+    width: 60px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 0px 8px 8px 0px;
+    background-color: #298eb5;
+    color: white;
+    font-size: 10px;
+    text-align: center;   /* 텍스트가로정렬*/
+    line-height: 30px;
+    cursor: pointer;    /*손올리면 클릭모양*/
+}
+
+#menuHome{   /*처음에 홈이니까 선택된것 배경 설정 */
+    color:black;
+    background-color:white;
+}
+
+
+

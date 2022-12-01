@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>회원가입 창</title>
+        <script src="index.js"></script>
+        <link rel="stylesheet" href="index.css" />
+    </head>
+        <body>
+        <form class="formStyle" name="myform" action="./join_confirm.php" method="post" enctype="multipart/form-data" onsubmit="return test()">
+            <h3>🁢 로그인 정보</h3>
+            <div class="log_info">
+                <span>아이디 : </span><input type="text" id="user_id" class="reg_box" name="user_id" placeholder="아이디를 입력해주세요." />
+            </div>
+            <span id="id_error" class="error_msg"></span>
+            <div class="log_info">
+                <span>비밀번호 : </span><input type="password" id="user_pw0" class="reg_box" name="user_pw0" placeholder="비밀번호를 입력해주세요." />
+            </div>
+            <span id="pw_error" class="error_msg"></span>
+            <div class="log_info">
+                <span>비밀번호 확인 : </span>
+                <input type="password" id="user_pw1" class="reg_box" name="user_pw1" placeholder="비밀번호를 한번 더 입력해주세요." />
+            </div>
+            <span id="pw2_error" class="error_msg"></span>
+
+            <h3>🁢 개인 정보</h3>
+            <div>이름 : <input id="name_input" type="text" name="user_name" /></div>
+            <span id="name_error" class="error_msg"></span>
+            <div>이메일 : <input type="text" class="email_box" name="email0" /> @ <input type="text" class="email_box" name="email1" /><br /></div>
+            <span id="email_error" class="error_msg"></span>
+            <div>
+                성별 : <label for="gender1"><input type="radio" id="gender1" name="gender" value="1" /> 남자</label>
+                <label for="gender2"><input type="radio" id="gender2" name="gender" value="2" /> 여자</label>
+            </div>
+            <span id="gender_error" class="error_msg"></span>
+            <div>
+                취미 : <label for="hobby1"><input type="checkbox" id="hobby1" name="hobby[]" value="1" /> 쇼핑</label>
+                <label for="hobby2"><input type="checkbox" id="hobby2" name="hobby[]" value="2" /> 음악감상</label>
+                <label for="hobby3"><input type="checkbox" id="hobby3" name="hobby[]" value="3" /> 운동</label>
+                <label for="hobby4"><input type="checkbox" id="hobby4" name="hobby[]" value="4" /> 게임</label>
+            </div>
+            <span id="hobby_error" class="error_msg"></span>
+            <div>
+                휴대폰 : <input type="text" class="phone_box" name="phone0" id="phone0" maxlength="3" oninput="changeFocus()" /> -
+                <input type="text" class="phone_box" name="phone1" id="phone1" maxlength="4" oninput="changeFocus()" /> -
+                <input type="text" class="phone_box" name="phone2" id="phone2" maxlength="4" />
+            </div>
+            <span id="phone_error" class="error_msg"></span>
+            <br />
+            <div>자기소개 : <textarea id="introduce" name="introduce" cols="30" rows="10"></textarea></div>
+            <div id="btn_wrap"><button id="reg_btn">가입하기</button></div>
+        </form>
+    </body>
+</html>
