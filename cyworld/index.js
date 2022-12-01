@@ -128,7 +128,7 @@ changeFocus = () => {
 
 function menuHome(){
     /* 눌렀을때 선택된것 표시하기 설정 */
-    document.getElementById("contentFrame").setAttribute("src","home.php?seq=<?php echo $row ?>")
+    document.getElementById("contentFrame").setAttribute("src","home.php")
     document.getElementById("menuHome").style="color:black;background-color:white;"
     /* 다른메뉴들 눌렀던거 원래 버튼으로 초기화 설정 */
     document.getElementById("menuGame").style="color:white;background-color:#298eb5"
