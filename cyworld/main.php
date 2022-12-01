@@ -7,6 +7,9 @@ $query = "SELECT * FROM member WHERE seq = '$seq'";
 $result = $connect->query($query) or die($connect->errorInfo());
 $row = $result->fetch();
 
+$query = "SELECT * FROM member";
+$result1 = $connect->query($query) or die($connect->errorInfo());
+
 
 ?>
 
@@ -20,30 +23,32 @@ $row = $result->fetch();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cute+Font&display=swap" rel="stylesheet">
+    <script src="index.js"></script>
     <script>
     function menuHome(){
         /* 눌렀을때 선택된것 표시하기 설정 */
         document.getElementById("contentFrame").setAttribute("src","home.php?seq=<?php echo $seq ?>")
         document.getElementById("menuHome").style="color:black;background-color:white;"
-        /* 다른메뉴들 눌렀던거 원래 버튼으로 초기화 설정 */
-        document.getElementById("menuGame").style="color:white;background-color:#298eb5"
-        document.getElementById("menuJukebox").style="color:white;background-color:#298eb5"
     }
     function menuGame(){
         /* 눌렀을때 선택된것 표시하기 설정 */
         document.getElementById("contentFrame").setAttribute("src","game.php")
         document.getElementById("menuGame").style="color:black;background-color:white;"
-        /* 다른메뉴들 눌렀던거 원래 버튼으로 초기화 설정 */
-        document.getElementById("menuHome").style="color:white;background-color:#298eb5"
-        document.getElementById("menuJukebox").style="color:white;background-color:#298eb5"
     }
     function menuJukebox(){
         /* 눌렀을때 선택된것 표시하기 설정 */
-        document.getElementById("contentFrame").setAttribute("src","jukebox.php?seq=<?php echo $seq ?>")
+        document.getElementById("contentFrame").setAttribute("src","jukebox.php")
         document.getElementById("menuJukebox").style="color:black;background-color:white;"
-        /* 다른메뉴들 눌렀던거 원래 버튼으로 초기화 설정 */
-        document.getElementById("menuHome").style="color:white;background-color:#298eb5"
-        document.getElementById("menuGame").style="color:white;background-color:#298eb5"
+    }
+    function menuVisit(){
+        /* 눌렀을때 선택된것 표시하기 설정 */
+        document.getElementById("contentFrame").setAttribute("src","visit.php?seq=<?php echo $seq ?>")
+        document.getElementById("menuVisit").style="color:black;background-color:white;"
+    }
+    function menuAll(){
+        /* 눌렀을때 선택된것 표시하기 설정 */
+        document.getElementById("contentFrame").setAttribute("src","./게시판/all.php?seq=<?php echo $seq ?>")
+        document.getElementById("menuAll").style="color:black;background-color:white;"
     }
     </script>
 </head>
@@ -85,11 +90,17 @@ $row = $result->fetch();
                         <div class="left__body__footer">
                             <div class="wrapper__feel">
                                 <div class="feel__title">오늘의 기분</div>
-                                <select class="feel__select">
-                                    <option>기쁨 😊</option>
-                                    <option>슬픔 😭</option>
-                                    <option>화남 😤</option>
-                                    <option>분노 🤬</option>
+                                <select class="feel__select" onchange="if(this.value) location.href = (this.value);">
+                                <option value="" select>파도타기</option>
+                                <?php
+                                $index = 0;
+                                while ($map = $result1->fetch()) {
+                                ?>
+                                    <option value="http://localhost:8888/cyworld/main.php?seq=<?php echo $map['seq'] ?>"><?php echo $map['userid'] ?>의 미니홈피</option>
+                                <?php
+                                    $index++;
+                                }
+                                ?>
                                 </select>
                             </div>
                         </div>
@@ -105,11 +116,11 @@ $row = $result->fetch();
                     </div>
                 </div>
                 <div class="navigation">
-                    <div id="menuHome" class="navigation__item" onclick="menuHome()">홈</div>
-                    <div id="menuGame" class="navigation__item" onclick="menuGame()">게임</div>
-                    <div id="menuJukebox" class="navigation__item" onclick="menuJukebox()">쥬크박스</div>
-                    <div id="textVisit" class="navigation__item" onclick="">방명록</div>
-                    <div id="textAll" class="navigation__item" onclick="">게시판</div>
+                    <div id="menuHome" class="navigation__item" onclick="menuReset(); menuHome();">홈</div>
+                    <div id="menuGame" class="navigation__item" onclick="menuReset(); menuGame();">게임</div>
+                    <div id="menuJukebox" class="navigation__item" onclick="menuReset(); menuJukebox();">쥬크박스</div>
+                    <div id="menuVisit" class="navigation__item" onclick="menuReset(); menuVisit();">방명록</div>
+                    <div id="menuAll" class="navigation__item" onclick="menuReset(); menuAll();">게시판</div>
                 </div>
             </div>
         </div>
