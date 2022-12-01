@@ -88,9 +88,9 @@ $result1 = $connect->query($query) or die($connect->errorInfo());
                             </div>
                         </div>
                         <div class="left__body__footer">
-                            <div class="wrapper__feel">
-                                <div class="feel__title">오늘의 기분</div>
-                                <select class="feel__select" onchange="if(this.value) location.href = (this.value);">
+                            <div class="wrapper__friend">
+                                <div class="friend__title">일촌</div>
+                                <select class="friend__select" onchange="if(this.value) location.href = (this.value);">
                                 <option value="" select>파도타기</option>
                                 <?php
                                 $index = 0;
