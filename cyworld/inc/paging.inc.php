@@ -32,8 +32,8 @@ if( !$pageNum || !$viewCnt || !$pageCnt ){
         <?php
         if( $startPageBlockNum > 1 ){
             ?>
-            <li><a class="page_arrow" href="./all.php?page_num=1"><<</a></li>
-            <li><a class="page_arrow" href="./all.php?page_num=<?php echo $startPageBlockNum-10; ?>"><</a></li>
+            <li><a class="page_arrow" href="./freeboard.php?page_num=1"><<</a></li>
+            <li><a class="page_arrow" href="./freeboard.php?page_num=<?php echo $startPageBlockNum-10; ?>"><</a></li>
             <?php
         }
         ?>
@@ -44,14 +44,14 @@ if( !$pageNum || !$viewCnt || !$pageCnt ){
             $pointClass = "";
             if( $currPage== $pageNum) $pointClass = "Selected";
             else $pointClass = "page_num";
-            ?><li ><a class="<?php echo $pointClass; ?>" href="./all.php?page_num=<?php echo $currPage; ?>"><?php echo $currPage; ?></a></li>
+            ?><li ><a class="<?php echo $pointClass; ?>" href="./freeboard.php?page_num=<?php echo $currPage; ?>"><?php echo $currPage; ?></a></li>
         <?php } ?>
 
         <?php
         if( $lastPageBlockNum < ceil( $pageCnt ) ){
             ?>
-            <li><a class="page_arrow" href="./all.php?page_num=<?php echo $lastPageBlockNum+1; ?>">></a></li>
-            <li><a class="page_arrow" href="./all.php?page_num=<?php echo ceil( $pageCnt ); ?>">>></a></li>
+            <li><a class="page_arrow" href="./freeboard.php?page_num=<?php echo $lastPageBlockNum+1; ?>">></a></li>
+            <li><a class="page_arrow" href="./freeboard.php?page_num=<?php echo ceil( $pageCnt ); ?>">>></a></li>
             <?php
         }
         ?>

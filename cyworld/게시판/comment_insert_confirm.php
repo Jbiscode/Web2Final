@@ -34,6 +34,8 @@ if( $userpw !== $man["userpw"] ){
 $originSeq = $_POST["origin_seq"];
 $writer_name = $man["username"];
 $content = $_POST["comment_content"];
+$profilepic = $man["profilepic"];
+
 
 
 //2. 쿼리 생성
@@ -41,11 +43,13 @@ $content = $_POST["comment_content"];
                      writer_name
                     , content
                     , origin_seq
+                    , profilepic
                     )
     VALUES (
              '$writer_name'
             , '$content'
             , $originSeq
+            , '$profilepic'
     )
     ";
         //3. 쿼리 실행

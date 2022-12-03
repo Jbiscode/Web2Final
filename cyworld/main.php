@@ -66,7 +66,7 @@ $result1 = $connect->query($query) or die($connect->errorInfo());
                     </div>
                     <div class="wrapper__left__body">
                         <div class="left__body__header">
-                            <div class="left__body__header__gray"><img class="main_pic" src="images/<?php echo $row['mainpic'] ?>"></div>
+                            <div class="left__body__header__gray"><img class="main_pic" src="images/profile_pic/<?php echo $row['profilepic'] ?>"></div>
                             <div class="left__body__header__line"></div>
                         </div>
                         <div class="left__body__profile">
@@ -96,7 +96,7 @@ $result1 = $connect->query($query) or die($connect->errorInfo());
                                 $index = 0;
                                 while ($map = $result1->fetch()) {
                                 ?>
-                                    <option value="http://121.183.177.30:1234/main.php?seq=<?php echo $map['seq'] ?>"><?php echo $map['userid'] ?>의 미니홈피</option>
+                                    <option value="http://localhost:8888/main.php?seq=<?php echo $map['seq'] ?>"><?php echo$map['username'] ?>(<?php echo $map['userid'] ?>)</option>
                                 <?php
                                     $index++;
                                 }

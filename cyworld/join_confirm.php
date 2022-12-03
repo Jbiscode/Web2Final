@@ -1,5 +1,5 @@
 <?php
-include "dbconn.php";
+include "inc/dbconn.php";
 
 $user_id = $_POST['user_id'];
 $query = "SELECT * FROM member WHERE userid = '$user_id'";
@@ -13,6 +13,16 @@ if( $memberObj && $memberObj["seq"] ){
     </script>
 <?php
     exit;
+}
+// 프로필사진 업로드 처리
+$tempFile = $_FILES['imgFile']['tmp_name'];
+$fileTypeExt = explode("/", $_FILES['imgFile']['type']);
+$fileType = $fileTypeExt[0];
+$resFile = "images/profile_pic/{$_FILES['imgFile']['name']}";
+$imageUpload = move_uploaded_file($tempFile, $resFile);
+$profile_pic = $_FILES['imgFile']['name'];
+if ($profile_pic == "") {
+    $profile_pic = "basic_pic.png";
 }
 
 $user_pw0 = $_POST['user_pw0'];
@@ -52,6 +62,7 @@ $query = "INSERT INTO member (
     , gender
     , hobby 
     , introduce
+    , profilepic
     )
 VALUES (
 '$user_id'
@@ -65,12 +76,14 @@ VALUES (
 , $user_gender
 , '$hobby'
 , '$introduce' 
+, '$profile_pic'
 )
 ";
 
 $result = $connect->query( $query ) or die($connect->errorInfo());
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

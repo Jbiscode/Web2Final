@@ -24,17 +24,7 @@ $resultData = $result->fetch();
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <style>
-        table{ border-collapse: collapse; }
-
-        #wrap{ width: 500px;}
-        .board_view{ width: 100%; border-top:2px solid #666; }
-        .board_view th, .board_view td{ border: 1px solid #efefef; padding: 5px; }
-        .board_view .board_content{ height: 200px; vertical-align: top; }
-
-        .btn{ text-align: center; display: inline-block; float: right; padding: 7px 10px; border: 1px solid #bbb; background-color: #efefef; }
-        .util_menu{ padding-top: 20px; }
-    </style>
+    <link rel="stylesheet" href="../styles/comment.css">
     <script src="../index.js"></script>
 </head>
 <body>
@@ -64,13 +54,15 @@ $resultData = $result->fetch();
         </tbody>
     </table>
     <div class="util_menu">
-        <a href="./all.php" class="btn btn_list">목록</a>
+        <a href="./freeboard.php" class="btn btn_list">목록</a>
     </div>
 
     <?php
     $query = "select * from comment where origin_seq = $seq";
-    //3. 쿼리 실행
     $result = $connect->query($query ) or die($connect->errorInfo());
+    
+
+    
     ?>
     <div class="comment_wrap">
         <ul>
@@ -78,11 +70,13 @@ $resultData = $result->fetch();
         while($row = $result->fetch())
         {
             ?>
-             <li>
+                 <img id='comment_img' src="../images/profile_pic/<?php echo $row['profilepic'] ?>" alt="1">
+             <span>
                  작성자 : <?php echo $row["writer_name"]; ?><br>
                  작성일 : <?php echo $row["reg_date"]; ?><br>
                  내용 : <?php echo $row["content"]; ?><br>
-             </li>
+             </span>
+             
             <?php
         }
         ?>
