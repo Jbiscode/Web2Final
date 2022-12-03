@@ -18,7 +18,7 @@ $result1 = $connect->query($query) or die($connect->errorInfo());
 <head>
     <meta charset="UTF-8">
     <title>사이좋은 사람들, 싸이월드</title>
-    <link rel="stylesheet" href="/cyworld/styles/index.css">
+    <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,7 +47,7 @@ $result1 = $connect->query($query) or die($connect->errorInfo());
     }
     function menuAll(){
         /* 눌렀을때 선택된것 표시하기 설정 */
-        document.getElementById("contentFrame").setAttribute("src","./게시판/all.php?seq=<?php echo $seq ?>")
+        document.getElementById("contentFrame").setAttribute("src","./게시판/freeboard.php?seq=<?php echo $seq ?>")
         document.getElementById("menuAll").style="color:black;background-color:white;"
     }
     </script>
@@ -66,7 +66,7 @@ $result1 = $connect->query($query) or die($connect->errorInfo());
                     </div>
                     <div class="wrapper__left__body">
                         <div class="left__body__header">
-                            <div class="left__body__header__gray"></div>
+                            <div class="left__body__header__gray"><img class="main_pic" src="images/<?php echo $row['mainpic'] ?>"></div>
                             <div class="left__body__header__line"></div>
                         </div>
                         <div class="left__body__profile">
@@ -96,7 +96,7 @@ $result1 = $connect->query($query) or die($connect->errorInfo());
                                 $index = 0;
                                 while ($map = $result1->fetch()) {
                                 ?>
-                                    <option value="http://localhost:8888/cyworld/main.php?seq=<?php echo $map['seq'] ?>"><?php echo $map['userid'] ?>의 미니홈피</option>
+                                    <option value="http://121.183.177.30:1234/main.php?seq=<?php echo $map['seq'] ?>"><?php echo $map['userid'] ?>의 미니홈피</option>
                                 <?php
                                     $index++;
                                 }
