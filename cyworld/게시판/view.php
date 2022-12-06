@@ -70,13 +70,15 @@ $resultData = $result->fetch();
         while($row = $result->fetch())
         {
             ?>
-                 <img id='comment_img' src="../images/profile_pic/<?php echo $row['profilepic'] ?>" alt="1">
-             <span>
-                 작성자 : <?php echo $row["writer_name"]; ?><br>
-                 작성일 : <?php echo $row["reg_date"]; ?><br>
-                 내용 : <?php echo $row["content"]; ?><br>
-             </span>
-             
+                 <div>
+                     작성자: <?php echo $row["writer_name"]; ?>
+                     (<?php echo $row["reg_date"]; ?>)
+                 </div>
+                 <div>
+                     <img id='comment_img' src="../images/profile_pic/<?php echo $row['profilepic'] ?>" alt="1">
+                     <p1>내용 : <?php echo $row["content"]; ?></p1>
+                 </div>
+                    <hr>
             <?php
         }
         ?>
