@@ -73,7 +73,7 @@ $result = $connect->query($query) or die($connect->errorInfo());
                 ?>
             </tbody>
         </table>
-        <a href="./index.html">신규회원가입하기</a>
+        <a href="/member/register/index.html">신규회원가입하기</a>
     </div>
 </body>
 
