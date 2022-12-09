@@ -1,6 +1,6 @@
 table{ border-collapse: collapse; }
 
-#wrap{ width: 500px;}
+#wrap{ width: 100vh;}
 .board_view{ width: 100%; border-top:2px solid #666; }
 .board_view th, .board_view td{ border: 1px solid #efefef; padding: 5px; }
 .board_view .board_content{ height: 200px; vertical-align: top; }
@@ -8,7 +8,10 @@ table{ border-collapse: collapse; }
 .btn{ text-align: center; display: inline-block; float: none; padding: 7px 10px; border: 1px solid #bbb; background-color: #efefef; }
 .util_menu{ padding-top: 20px; }
 
+
+
+
 #comment_img{
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
 }

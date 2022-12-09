@@ -21,7 +21,7 @@ $content = $_POST["content"];
                     , content
                     )
     VALUES (
-              '$title'
+            '$title'
             , '$writer_name'
             , '$content'
     )

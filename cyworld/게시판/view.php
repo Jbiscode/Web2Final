@@ -24,8 +24,8 @@ $resultData = $result->fetch();
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="../styles/comment.css">
-    <script src="../index.js"></script>
+    <link rel="stylesheet" href="../styles/freeboard.css">
+    <script src="../scripts/index.js"></script>
 </head>
 <body>
 <div id="wrap">
@@ -70,14 +70,14 @@ $resultData = $result->fetch();
         while($row = $result->fetch())
         {
             ?>
-                 <div>
-                     작성자: <?php echo $row["writer_name"]; ?>
-                     (<?php echo $row["reg_date"]; ?>)
-                 </div>
-                 <div>
-                     <img id='comment_img' src="../images/profile_pic/<?php echo $row['profilepic'] ?>" alt="1">
-                     <p1>내용 : <?php echo $row["content"]; ?></p1>
-                 </div>
+                <div>
+                    작성자: <?php echo $row["writer_name"]; ?>
+                    (<?php echo $row["reg_date"]; ?>)
+                </div>
+                <div>
+                    <img id='comment_img' src="../images/profile_pic/<?php echo $row['profilepic'] ?>" alt="1">
+                    <p1>내용 : <?php echo $row["content"]; ?></p1>
+                </div>
                     <hr>
             <?php
         }

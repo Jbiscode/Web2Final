@@ -23,7 +23,7 @@ $result1 = $connect->query($query) or die($connect->errorInfo());
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cute+Font&display=swap" rel="stylesheet">
-    <script src="index.js"></script>
+    <script src="scripts/index.js"></script>
     <script>
     function menuHome(){
         /* 눌렀을때 선택된것 표시하기 설정 */

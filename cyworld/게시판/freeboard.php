@@ -36,23 +36,15 @@ $result = $connect->query($query ) or die($connect->errorInfo());
 <head>
     <meta charset="UTF-8">
     <title>자유게시판 리스트</title>
+    <link rel="stylesheet" href="../styles/freeboard.css">
     <style>
-        #wrap{ width: 500px; }
-        .bold { font-weight: bold;}
-        .btn{ text-align: center; display: inline-block; float: right; padding: 7px 10px; border: 1px solid #bbb; background-color: #efefef; }
+        html, body {
+            height: 100%;
+        }
     </style>
-    <script>
-        // window.onload = function (){
-        //     var searchBtn = document.querySelector("#searchBtn");
-        //     var searchKey = document.querySelector("#searchKey");
-        //     searchBtn.addEventListener("click", function (){
-        //         location.href = "./list.php?search_key=" + searchKey.value;
-        //     })
-        // }
-    </script>
 </head>
 <body>
-<div id="wrap">
+
     <div id="searchBox">
         <form id="search_form" action="./list.php" method="get" name="search_form">
             <select name="search_field" id="">
@@ -66,16 +58,16 @@ $result = $connect->query($query ) or die($connect->errorInfo());
         </form>
     </div>
     <table>
-        <thead>
-        <tr>
-            <td>번호</td>
-            <td>제목</td>
-            <td>작성자</td>
-            <td>작성일</td>
-            <td>조회수</td>
-        </tr>
+        <thead id="freeboard_head">
+            <tr>
+                <td>번호</td>
+                <td>제목</td>
+                <td>작성자</td>
+                <td>작성일</td>
+                <td>조회수</td>
+            </tr>
         </thead>
-        <tbody>
+        <tbody id='freeboard_body'>
         <?php
         //4. 결과 처리
         $index=$totalCnt - (($pageNum-1)*$viewCnt);
@@ -98,6 +90,6 @@ $result = $connect->query($query ) or die($connect->errorInfo());
     <div class="util_menu">
         <a href="./insert.php" class="btn_write">쓰기</a>
     </div>
-</div>
+
 </body>
 </html>

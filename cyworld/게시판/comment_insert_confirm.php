@@ -40,13 +40,13 @@ $profilepic = $man["profilepic"];
 
 //2. 쿼리 생성
     $query = "INSERT INTO comment (
-                     writer_name
+                    writer_name
                     , content
                     , origin_seq
                     , profilepic
                     )
     VALUES (
-             '$writer_name'
+            '$writer_name'
             , '$content'
             , $originSeq
             , '$profilepic'
