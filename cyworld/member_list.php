@@ -24,7 +24,7 @@ $result = $connect->query($query) or die($connect->errorInfo());
 <head>
     <meta charset="UTF-8">
     <title>회원 리스트</title>
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./styles/register.css">
 </head>
 
 <body>
@@ -73,7 +73,7 @@ $result = $connect->query($query) or die($connect->errorInfo());
                 ?>
             </tbody>
         </table>
-        <a href="./index.html">신규회원가입하기</a>
+        <a href="/member/register/index.html">신규회원가입하기</a>
     </div>
 </body>
 

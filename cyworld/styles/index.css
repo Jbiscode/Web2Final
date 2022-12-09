@@ -7,7 +7,7 @@
 .background{
     width: 1024px;
     height: 600px;
-    background-image: url("/cyworld/images/background.png");
+    background-image: url("../images/background.png");
     padding: 20px 0px 0px 20px;
     background-repeat : no-repeat;
     background-size :cover
@@ -17,7 +17,7 @@
 .outerbox{
     width: 808px;
     height: 544px;
-    background-image: url("/cyworld/images/outerbox.png");
+    background-image: url("../images/outerbox.png");
     /* background-repeat: no-repeat; */
     background-size : cover;
 }
@@ -74,7 +74,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 20px 30px 0px 30px;
+    padding: 20px 20px 0px 20px;
     border: 1px solid gray;
     border-radius: 15px;
     background-color: white;
@@ -87,9 +87,13 @@
 }
 
 .left__body__header__gray{
-    width: 148px;
+    width: 166px;
     height: 133px;
     background-color: #C4C4C4;;
+}
+.main_pic{
+    width: 166px;
+    height: 133px;
 }
 
 .left__body__header__line{
@@ -125,13 +129,13 @@
     margin-bottom: 30px;
     margin-top: 100px;
 }
-.wrapper__feel{
+.wrapper__friend{
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
 }
-.feel__title {
+.friend__title {
     font-size: 11px;
     margin-bottom: 5px;
     color: gray;

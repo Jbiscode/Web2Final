@@ -14,6 +14,9 @@ if( !$pageNum || !$viewCnt || !$pageCnt ){
     .paging_wrap{ width: 473px; }
     .paging_wrap ul { width: 473px; margin: 20px auto 0 auto;}
     .paging_wrap ul li{ float: left; list-style-type: none; padding: 0 10px; }
+    .page_arrow{ color:blue ;text-decoration: none; font-weight: bold;}
+    .page_num{ color: #000;text-decoration: none;}
+    .Selected{ font-weight: bold; color: red; text-decoration: none; font-size: 19px;}
 </style>
 <div class="paging_wrap">
     <ul>
@@ -29,8 +32,8 @@ if( !$pageNum || !$viewCnt || !$pageCnt ){
         <?php
         if( $startPageBlockNum > 1 ){
             ?>
-            <li><a href="./list.php?page_num=1"><<</a></li>
-            <li><a href="./list.php?page_num=<?php echo $startPageBlockNum-10; ?>"><</a></li>
+            <li><a class="page_arrow" href="./freeboard.php?page_num=1"><<</a></li>
+            <li><a class="page_arrow" href="./freeboard.php?page_num=<?php echo $startPageBlockNum-10; ?>"><</a></li>
             <?php
         }
         ?>
@@ -39,15 +42,16 @@ if( !$pageNum || !$viewCnt || !$pageCnt ){
         for( $i=0; $i<$loopCnt; $i++){
             $currPage = $startPageBlockNum + $i;
             $pointClass = "";
-            if( $currPage== $pageNum) $pointClass = "bold";
-            ?><li class="<?php echo $pointClass; ?>"><a href="./list.php?page_num=<?php echo $currPage; ?>"><?php echo $currPage; ?></a></li>
+            if( $currPage== $pageNum) $pointClass = "Selected";
+            else $pointClass = "page_num";
+            ?><li ><a class="<?php echo $pointClass; ?>" href="./freeboard.php?page_num=<?php echo $currPage; ?>"><?php echo $currPage; ?></a></li>
         <?php } ?>
 
         <?php
         if( $lastPageBlockNum < ceil( $pageCnt ) ){
             ?>
-            <li><a href="./list.php?page_num=<?php echo $lastPageBlockNum+1; ?>">></a></li>
-            <li><a href="./list.php?page_num=<?php echo ceil( $pageCnt ); ?>">>></a></li>
+            <li><a class="page_arrow" href="./freeboard.php?page_num=<?php echo $lastPageBlockNum+1; ?>">></a></li>
+            <li><a class="page_arrow" href="./freeboard.php?page_num=<?php echo ceil( $pageCnt ); ?>">>></a></li>
             <?php
         }
         ?>

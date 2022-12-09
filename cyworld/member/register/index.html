@@ -5,8 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>회원가입 창</title>
-        <script src="index.js"></script>
-        <link rel="stylesheet" href="index.css" />
+        <link rel="stylesheet" href="/styles/register.css" />
+        <script src="/scripts/index.js"></script>
     </head>
         <body>
         <form class="formStyle" name="myform" action="./join_confirm.php" method="post" enctype="multipart/form-data" onsubmit="return test()">
@@ -49,6 +49,7 @@
             </div>
             <span id="phone_error" class="error_msg"></span>
             <br />
+            <input type="file" name="imgFile" /><br>
             <div>자기소개 : <textarea id="introduce" name="introduce" cols="30" rows="10"></textarea></div>
             <div id="btn_wrap"><button id="reg_btn">가입하기</button></div>
         </form>

@@ -125,28 +125,29 @@ changeFocus = () => {
     }
 };
 
+menuReset = () => {
+    document.getElementById("menuHome").style="color:white;background-color:#298eb5"
+    document.getElementById("menuGame").style="color:white;background-color:#298eb5"
+    document.getElementById("menuJukebox").style="color:white;background-color:#298eb5"
+    document.getElementById("menuVisit").style="color:white;background-color:#298eb5"
+    document.getElementById("menuAll").style="color:white;background-color:#298eb5"
+}
 
-function menuHome(){
-    /* 눌렀을때 선택된것 표시하기 설정 */
-    document.getElementById("contentFrame").setAttribute("src","home.php ")
-    document.getElementById("menuHome").style="color:black;background-color:white;"
-    /* 다른메뉴들 눌렀던거 원래 버튼으로 초기화 설정 */
-    document.getElementById("menuGame").style="color:white;background-color:#298eb5"
-    document.getElementById("menuJukebox").style="color:white;background-color:#298eb5"
-}
-function menuGame(){
-    /* 눌렀을때 선택된것 표시하기 설정 */
-    document.getElementById("contentFrame").setAttribute("src","game.php")
-    document.getElementById("menuGame").style="color:black;background-color:white;"
-    /* 다른메뉴들 눌렀던거 원래 버튼으로 초기화 설정 */
-    document.getElementById("menuHome").style="color:white;background-color:#298eb5"
-    document.getElementById("menuJukebox").style="color:white;background-color:#298eb5"
-}
-function menuJukebox(){
-    /* 눌렀을때 선택된것 표시하기 설정 */
-    document.getElementById("contentFrame").setAttribute("src","jukebox.html")
-    document.getElementById("menuJukebox").style="color:black;background-color:white;"
-    /* 다른메뉴들 눌렀던거 원래 버튼으로 초기화 설정 */
-    document.getElementById("menuHome").style="color:white;background-color:#298eb5"
-    document.getElementById("menuGame").style="color:white;background-color:#298eb5"
+commentTest = () =>{
+    if( document.commentform.comment_userid.value == "" ){
+        alert( "아이디는 필수 항목입니다.");
+        document.commentform.comment_userid.focus();
+        return false;
+    }
+    if( document.commentform.comment_pw.value == "" ){
+        alert( "비밀번호는 필수 항목입니다.");
+        document.commentform.comment_pw.focus();
+        return false;
+    }
+    if( document.commentform.comment_content.value == "" ){
+        alert( "내용은 필수 항목입니다.");
+        document.commentform.comment_content.focus();
+        return false;
+    }
+    return true;
 }
