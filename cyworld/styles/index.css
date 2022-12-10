@@ -167,10 +167,17 @@
     font-size: 16px;
     font-weight:bold;
 }
-.right__header__setting{
+.right__header__setting > a{
     font-size: 9px;
-
+    text-decoration: none;
+    color: #55B2D4;
 }
+.right__header__setting > a:hover{
+    font-size: 10px;
+    font-weight: bold;
+    color: #066688;
+}
+
 .wrapper__right__body{
     width: 510px;
     height: 445px;

@@ -42,12 +42,12 @@ $result1 = $connect->query($query) or die($connect->errorInfo());
     }
     function menuVisit(){
         /* 눌렀을때 선택된것 표시하기 설정 */
-        document.getElementById("contentFrame").setAttribute("src","visit.php?seq=<?php echo $seq ?>")
+        document.getElementById("contentFrame").setAttribute("src","./방명록/visit.php?seq=<?php echo $seq ?>")
         document.getElementById("menuVisit").style="color:black;background-color:white;"
     }
     function menuAll(){
         /* 눌렀을때 선택된것 표시하기 설정 */
-        document.getElementById("contentFrame").setAttribute("src","./게시판/freeboard.php?seq=<?php echo $seq ?>")
+        document.getElementById("contentFrame").setAttribute("src","./게시판/freeboard.php")
         document.getElementById("menuAll").style="color:black;background-color:white;"
     }
     </script>
@@ -96,7 +96,7 @@ $result1 = $connect->query($query) or die($connect->errorInfo());
                                 $index = 0;
                                 while ($map = $result1->fetch()) {
                                 ?>
-                                    <option value="http://localhost:8888/main.php?seq=<?php echo $map['seq'] ?>"><?php echo$map['username'] ?>(<?php echo $map['userid'] ?>)</option>
+                                    <option value="<?php echo $_SERVER ?>/main.php?seq=<?php echo $map['seq'] ?>"><?php echo $map['username'] ?>(<?php echo $map['userid'] ?>)</option>
                                 <?php
                                     $index++;
                                 }
@@ -109,7 +109,7 @@ $result1 = $connect->query($query) or die($connect->errorInfo());
                 <div class="wrapper__right">
                     <div class="wrapper__right__header">
                         <div class="right__header__title">사이좋은 사람들, 싸이월드</div>
-                        <div class="right__header__setting">사생활 보호설정 <i class="fas fa-caret-right arrow"></i></div>
+                        <div class="right__header__setting"><a href="<?php $_SERVER ?>/member_list.php">회원목록 보기 <i class="fas fa-caret-right arrow"></i></a></div>
                     </div>
                     <div class="wrapper__right__body">
                         <iframe id="contentFrame" src="home.php?seq=<?php echo $row['seq'] ?>"></iframe>

@@ -64,8 +64,8 @@ $result = $connect->query($query) or die($connect->errorInfo());
                         <?php echo $row["reg_date"]; ?>
                     </td>
                     <td>
-                        <a class="list_btn" href="update_access.php?seq=<?php echo $row['seq']; ?>">정보수정
-                            <a class="list_btn" href="delete_access.php?seq=<?php echo $row['seq']; ?>">삭제
+                        <a class="list_btn" href="./member/update/update_access.php?seq=<?php echo $row['seq']; ?>">정보수정
+                            <a class="list_btn" href="./member/delete/delete_access.php?seq=<?php echo $row['seq']; ?>">삭제
                     </td>
                 </tr>
                 <?php
