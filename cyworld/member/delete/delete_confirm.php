@@ -60,7 +60,7 @@ if ($userpw !== $memberObj["userpw"]) {
             </li>
         </ul>
         <span>
-            <a id='go_back' href="/member_list.php"> 뒤로가기</a>
+            <a id='go_back' href="/member/member_list.php"> 뒤로가기</a>
             <a id='del_btn' href="delete_form.php?seq=<?php echo $memberObj['seq']; ?>"> 삭제하겠습니다.</a>
         </span>
     </div>

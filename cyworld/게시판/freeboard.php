@@ -36,7 +36,7 @@ $result = $connect->query($query ) or die($connect->errorInfo());
 <head>
     <meta charset="UTF-8">
     <title>자유게시판 리스트</title>
-    <link rel="stylesheet" href="../styles/freeboard.css">
+    <link rel="stylesheet" href="/styles/freeboard.css">
     <style>
         html, body {
             height: 100%;
@@ -46,7 +46,7 @@ $result = $connect->query($query ) or die($connect->errorInfo());
 <body>
 
     <div id="searchBox">
-        <form id="search_form" action="./list.php" method="get" name="search_form">
+        <form id="search_form" action="/게시판/list.php" method="get" name="search_form">
             <select name="search_field" id="">
                 <option value="all">전체</option>
                 <option value="writer_name">작성자</option>

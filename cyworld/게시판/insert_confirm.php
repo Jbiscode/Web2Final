@@ -44,7 +44,7 @@ if( !$result ){
 <script>
     setTimeout(function (){
 
-        location.href = "./freeboard.php";
+        location.href = "/게시판/freeboard.php";
     }, 1000 );
 </script>
 

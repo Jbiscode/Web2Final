@@ -1,6 +1,6 @@
 <?php
 
-include "../inc/dbconn.php";
+include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/inc/dbconn.php";
 
 $userpw=$_POST['visit_pw'];
 // $userpw=$_POST['userpw']
