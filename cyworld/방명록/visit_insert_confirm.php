@@ -5,7 +5,7 @@ include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/inc/dbconn.php";
 $userpw=$_POST['visit_pw'];
 // $userpw=$_POST['userpw']
 $userid = $_POST['visit_userid'];
-$content = $_POST["visit_content"];
+$content = $_POST["visitor_content"];
 
 //3. 쿼리 실행
 $query = "SELECT * FROM member WHERE userid = '$userid'";

@@ -11,7 +11,7 @@ $seq = $_REQUEST['seq'];
 
 
 // 방명록 상세 가져오기
-$query = "select * from visit WHERE user_seq = $seq";
+$query = "select * from visit WHERE user_seq = $seq ORDER BY reg_date DESC";
 $result = $connect->query( $query ) or die($connect->errorInfo());
 
 ?>
@@ -26,37 +26,38 @@ $result = $connect->query( $query ) or die($connect->errorInfo());
 </head>
 <body>
     <div id="visit_insert_wrap">
-        <form id="visit_insert_form" name="commentform" action="visit_insert_confirm.php" method="post" onsubmit="return commentTest()">
+        <form id="visit_insert_form" name="visitform" action="visit_insert_confirm.php" method="post" onsubmit="return visitTest()">
             <input type="hidden" name="user_seq" value="<?php echo $seq; ?>">
             <div>
                 <span>아이디 : <input type="text" name="visit_userid"></span>
                 <span>비밀번호 : <input type="password" name="visit_pw"></span>
             </div>
             <div>
-                <span>방명록 : </span><textarea id="visitor_content" type="text" name="visit_content" ></textarea> 
+                <span>방명록 : </span><textarea id="visitor_content" type="text" name="visitor_content" ></textarea> 
             </div>
             <button>방명록 등록</button>
         </form>
     </div>
-    <div>
-        <ul>
+    <div id="visit_list_wrap">
+        
         <?php
         while($row = $result->fetch())
         {
             ?>
-                <div>
-                    작성자: <?php echo $row["visitor_name"]; ?>
-                    (<?php echo $row["reg_date"]; ?>)
+                <div id="visit_list_header">
+                    <span><?php echo $row["visitor_name"]; ?></span>
+                    <span>(<?php echo $row["reg_date"]; ?>)</span>
+                    <a href="/방명록/delete_access.php?seq=<?php echo $seq; ?>&&visitor_name=<?php echo $row['visitor_name'] ?>&&visit_seq=<?php echo $row['seq'] ?>">삭제</a>
                 </div>
-                <div>
+                <div id="visit_list_content">
                     <img id='comment_img' src="/images/profile_pic/<?php echo $row['profilepic'] ?>" alt="1">
-                    <p1>내용 : <?php echo $row["content"]; ?></p1>
+                    <p1><?php echo $row["content"]; ?></p1>
                 </div>
                     <hr>
             <?php
         }
         ?>
-        </ul>
+        
     </div>
 
 </body>
