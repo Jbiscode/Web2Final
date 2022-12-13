@@ -24,8 +24,8 @@ $resultData = $result->fetch();
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="../styles/freeboard.css">
-    <script src="../scripts/index.js"></script>
+    <link rel="stylesheet" href="/styles/freeboard.css">
+    <script src="/scripts/index.js"></script>
 </head>
 <body>
 <div id="wrap">
@@ -84,7 +84,7 @@ $resultData = $result->fetch();
         ?>
         </ul>
         <div class="comment_insert_wrap">
-            <form name="commentform" action="comment_insert_confirm.php" method="post" onsubmit="return commentTest()">
+            <form name="commentform" action="/게시판/comment_insert_confirm.php" method="post" onsubmit="return commentTest()">
             <input type="hidden" name="origin_seq" value="<?php echo $seq; ?>"><br>
             작성자 아이디 : <input type="text" name="comment_userid"><br>
             비밀번호 : <input type="password" name="comment_pw"><br>

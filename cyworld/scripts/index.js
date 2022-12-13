@@ -151,3 +151,21 @@ commentTest = () =>{
     }
     return true;
 }
+visitTest = () =>{
+    if( document.visitform.visit_userid.value == "" ){
+        alert( "아이디는 필수 항목입니다.");
+        document.visitform.visit_userid.focus();
+        return false;
+    }
+    if( document.visitform.visit_pw.value == "" ){
+        alert( "비밀번호는 필수 항목입니다.");
+        document.visitform.visit_pw.focus();
+        return false;
+    }
+    if( document.visitform.visit_content.value == "" ){
+        alert( "내용은 필수 항목입니다.");
+        document.visitform.visit_content.focus();
+        return false;
+    }
+    return true;
+}

@@ -117,7 +117,7 @@ $result = $connect->query( $query ) or die($connect->errorInfo());
         ?></li>
             <li>휴대폰 : <?php echo $user_phone0.'-'.$user_phone1.'-'.$user_phone2; ?></li>
         </ul>
-        <a id='go_back' href="./member_list.php"> 회원 리스트 보기</a>
+        <a id='go_back' href="/member/member_list.php"> 회원 리스트 보기</a>
     </div>
 </body>
 </html>

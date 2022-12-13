@@ -29,7 +29,7 @@
 </head>
 <body>
 
-<form name="myform" action="insert_confirm.php" method="post" onsubmit="return test();">
+<form name="myform" action="/게시판/insert_confirm.php" method="post" onsubmit="return test();">
     제목 : <input type="text" name="title"><br>
     작성자 : <input type="text" name="writer_name"><br>
     내용 : <textarea name="content" cols="40" rows="20"></textarea>

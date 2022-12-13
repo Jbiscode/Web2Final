@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="./styles/game.css">
-    <script src="./lotto.js"></script>
+    <script src="/scripts/lotto.js"></script>
     
     <script>
         function startWord(){
