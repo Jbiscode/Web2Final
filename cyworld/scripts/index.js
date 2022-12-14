@@ -169,3 +169,47 @@ visitTest = () =>{
     }
     return true;
 }
+
+loginTest = () =>{
+    var loginForm = document.loginform;
+    var idError = document.getElementById("id_error");
+    var pwError = document.getElementById("pw_error");
+
+    const ERROR_MESSAGE = {
+        ID_ERROR: "아이디를 입력해주세요.",
+        PW_ERROR: "비밀번호를 입력해주세요."
+    }
+    var inputCheck = false;
+
+    var idCheck,
+        pwCheck;
+
+    if (loginForm.user_id.value == "") {
+        idError.innerText = ERROR_MESSAGE.ID_ERROR;
+        idCheck = false;
+    } else {
+        idError.innerText = "";
+        idCheck = true;
+    }
+
+    if (loginForm.user_pw.value == "") {
+        pwError.innerText = ERROR_MESSAGE.PW_ERROR;
+        pwCheck = false;
+    } else {
+        pwError.innerText = "";
+        pwCheck = true;
+    }
+
+    if ((idCheck && pwCheck) == true) {
+        inputCheck = true;
+    } else {
+        inputCheck = false;
+    }
+
+    if (inputCheck == false) {
+        alert("입력값을 확인해주세요.");
+        return false;
+    } else {
+        return true;
+    }
+}

@@ -1,79 +1,69 @@
 <?php
 include "./inc/dbconn.php";
-
-//2. 쿼리 생성
-$query = ' select * from member';
-
-//3. 쿼리 실행
-$result = $connect->query($query) or die($connect->errorInfo());
-
-
+include_once "./inc/session.php";
+print_r($_SESSION);
 ?>
 
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <title>회원 리스트</title>
-    <link rel="stylesheet" href="./styles/register.css">
+    <link rel="stylesheet" href="./styles/index.css">
 </head>
 
 <body>
-
-    <div id='member_list_wrap'>
-        <table id='member_list_table'>
-            <thead>
-                <tr>
-                    <td>번호</td>
-                    <td>이름</td>
-                    <td>사용자아이디</td>
-                    <td>전화번호</td>
-                    <td>가입일</td>
-                    <td>관리</td>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                //4. 결과 처리
-                $index = 0;
-                while ($row = $result->fetch()) {
-                ?>
-                <tr>
-                    <td>
-                        <?php echo ++$index; ?>
-                    </td>
-                    <td>
-                        <?php echo $row["username"]; ?>
-                    </td>
-                    <td>
-                        <a href="main.php?seq=<?php echo $row['seq']; ?>""> <?php echo $row["userid"]; ?></a>
-                    </td>
-                    <td>
-                        <?php echo $row["phone0"] . '-' . $row["phone1"] . '-' . $row["phone2"]; ?>
-                    </td>
-                    <td>
-                        <?php echo $row["reg_date"]; ?>
-                    </td>
-                    <td>
-                        <a class="list_btn" href="./member/update/update_access.php?seq=<?php echo $row['seq']; ?>">정보수정
-                            <a class="list_btn" href="./member/delete/delete_access.php?seq=<?php echo $row['seq']; ?>">삭제
-                    </td>
-                </tr>
-                <?php
-                }
-                ?>
-            </tbody>
-        </table>
-        <a href="/member/register/index.html">신규회원가입하기</a>
+    <div id="background">
+        <div id="wrapper">
+            <div id="header">
+                <div id="left_header">
+                    <img id="main_logo" src="https://cyworld.com/img/svg/logo_cyworld.svg" alt="">
+                    <h2>ㄷr시 만나서 반ㄱr워!</h2>
+                    <p>새롭게 쌓이는 추억, 우리 함께 만들어요.</p>
+                </div>
+                <div id="right_header">
+                    <img src="https://cyworld.com/img/gif/landing2_gif3.gif" alt="1">
+                    <img src="https://cyworld.com/img/gif/landing2_gif4.gif" alt="2">
+                </div>
+            </div>
+            <div id="container">
+                <div id="left_container">
+                    <?php if(!isset($_SESSION['userid'])){ ?>
+                    <div id="left_container_wrapper">
+                        <h1>
+                            지금 바로 싸이월드에 접속하세요!
+                        </h1>
+                        <div id="login_container">
+                            <a href="<?php echo $_SERVER ?>/member/login/login.html">
+                                <img src="https://cyworld.com/img/svg/logo_cyworld.svg" alt="">로그인
+                            </a>
+                        </div>
+                        <p>
+                            아이디가 없으신가요? <a href="">회원가입</a>
+                        </p>
+                    </div>
+                    <?php }else{ ?>
+                    <div id="left_container_wrapper">
+                        <h1>
+                        <?php echo $login_username ?>님! 어서오세요!
+                        </h1>
+                        <div id="login_container">
+                            <a href="<?php echo $_SERVER ?>/main.php?seq=<?php echo $login_seq ?>">
+                                <img src="https://cyworld.com/img/svg/logo_cyworld.svg" alt="">미니홈피로 이동 
+                            </a>
+                        </div>
+                        <p>
+                            <a href="<?php echo $_SERVER ?>/inc/logout.php">로그아웃</a>
+                        </p>
+                    </div>
+                    <?php } ?>
+                </div>
+                <div id="right_container">
+                    <img src="./images/indeximg2.png" alt="">
+                    <img src="./images/indeximg3.png" alt="">
+                </div>
+        </div>
     </div>
 </body>
 

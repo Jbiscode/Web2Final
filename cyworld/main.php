@@ -18,7 +18,7 @@ $result1 = $connect->query($query) or die($connect->errorInfo());
 <head>
     <meta charset="UTF-8">
     <title>사이좋은 사람들, 싸이월드</title>
-    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -109,7 +109,7 @@ $result1 = $connect->query($query) or die($connect->errorInfo());
                 <div class="wrapper__right">
                     <div class="wrapper__right__header">
                         <div class="right__header__title">사이좋은 사람들, 싸이월드</div>
-                        <div class="right__header__setting"><a href="<?php $_SERVER ?>/member/member_list.php">회원목록 보기 <i class="fas fa-caret-right arrow"></i></a></div>
+                        <div class="right__header__setting"><a href="<?php $_SERVER ?>/index.php">메인페이지로 <i class="fas fa-caret-right arrow"></i></a></div>
                     </div>
                     <div class="wrapper__right__body">
                         <iframe id="contentFrame" src="home.php?seq=<?php echo $row['seq'] ?>"></iframe>
