@@ -1,7 +1,6 @@
 <?php
 include "./inc/dbconn.php";
 include_once "./inc/session.php";
-print_r($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +39,7 @@ print_r($_SESSION);
                             </a>
                         </div>
                         <p>
-                            아이디가 없으신가요? <a href="">회원가입</a>
+                            아이디가 없으신가요? <a href="/member/register/index.html">회원가입</a>
                         </p>
                     </div>
                     <?php }else{ ?>
@@ -54,7 +53,7 @@ print_r($_SESSION);
                             </a>
                         </div>
                         <p>
-                            <a href="<?php echo $_SERVER ?>/inc/logout.php">로그아웃</a>
+                            <a href="<?php echo $_SERVER ?>/member/login/logout.php">로그아웃</a>
                         </p>
                     </div>
                     <?php } ?>

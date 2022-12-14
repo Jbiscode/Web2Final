@@ -4,7 +4,6 @@ session_start();
 
 $userid = $_POST['user_id'];
 $userpw = $_POST['user_pw'];
-print_r($userid);
 
 $query = "SELECT * FROM member WHERE userid = '$userid'";
 $result = $connect->query($query) or die($connect->errorInfo());
