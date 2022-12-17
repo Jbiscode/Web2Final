@@ -36,11 +36,12 @@ $result = $connect->query($query ) or die($connect->errorInfo());
 <head>
     <meta charset="UTF-8">
     <title>자유게시판 리스트</title>
+    <link rel="stylesheet" href="../styles/freeboard.css">
 
 </head>
-<body>
+<body id="board_listBox">
 <div id="searchBox">
-    <form id="search_form" action="게시판/list.php" method="get" name="search_form">
+    <form id="search_form" action="list.php" method="get" name="search_form">
         <select name="search_field" id="">
             <option value="all">전체</option>
             <option value="writer_name">작성자</option>
@@ -53,16 +54,16 @@ $result = $connect->query($query ) or die($connect->errorInfo());
 </div>
 
 <table>
-    <thead>
+    <thead id="freeboard_head">
     <tr>
-        <td>번호</td>
-        <td>제목</td>
-        <td>작성자</td>
-        <td>작성일</td>
-        <td>조회수</td>
+        <td class="board_num">No</td>
+        <td class="board_name">제목</td>
+        <td class="board_writer">작성자</td>
+        <td class="board_reg">작성일</td>
+        <td class="board_hit">조회수</td>
     </tr>
     </thead>
-    <tbody>
+    <tbody id="freeboard_body">
     <?php
     //4. 결과 처리
     $index=$totalCnt - (($pageNum-1)*$viewCnt);
@@ -70,11 +71,11 @@ $result = $connect->query($query ) or die($connect->errorInfo());
     {
         ?>
         <tr>
-            <td><?php echo $index--; ?></td>
-            <td><a href="view.php?seq=<?php echo $row["seq"]; ?>"><?php echo $row["title"]; ?></a></td>
-            <td><?php echo $row["writer_name"]; ?></td>
-            <td><?php echo $row["reg_date"]; ?></td>
-            <td><?php echo $row["hit"]; ?></td>
+            <td class="board_num"><?php echo $index--; ?></td>
+            <td class="board_name"><a href="view.php?seq=<?php echo $row["seq"]; ?>"><?php echo $row["title"]; ?></a></td>
+            <td class="board_writer"><?php echo $row["writer_name"]; ?></td>
+            <td class="board_reg"><?php echo date("y-m-d", strtotime($row["reg_date"])); ?></td>
+            <td class="board_hit"><?php echo $row["hit"]; ?></td>
         </tr>
         <?php
     }

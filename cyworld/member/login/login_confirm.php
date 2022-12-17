@@ -14,7 +14,7 @@ if( $userpw == $memberObj["userpw"]){
     <script>
     setTimeout(function(){
         location.href = "/index.php";
-    },3000);
+    },2000);
     </script>
     <link rel="stylesheet" href="/styles/loader.css">
     <span class="loader"></span>

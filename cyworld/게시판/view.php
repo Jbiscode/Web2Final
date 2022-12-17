@@ -24,7 +24,7 @@ $resultData = $result->fetch();
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="/styles/freeboard.css">
+    <link rel="stylesheet" href="../styles/freeboard.css">
     <script src="/scripts/index.js"></script>
 </head>
 <body>

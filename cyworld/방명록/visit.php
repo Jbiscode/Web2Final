@@ -39,7 +39,14 @@ $result = $connect->query( $query ) or die($connect->errorInfo());
             <?php } ?>
             
             <div>
-                <span>방명록 : </span><textarea id="visitor_content" type="text" name="visitor_content" ></textarea> 
+                <span>
+                    <img id="visitor_image" src="/images/profile_pic/<?php 
+                    if (isset($_SESSION['userid'])) {
+                        echo $memberObj['profilepic'];
+                    } else {
+                        echo "basic_pic.png";}?>">
+                </span>
+                <textarea id="visitor_content" type="text" name="visitor_content" ></textarea> 
             </div>
             <button>방명록 등록</button>
         </form>

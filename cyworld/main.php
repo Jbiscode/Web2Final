@@ -114,7 +114,7 @@ $result1 = $connect->query($query) or die($connect->errorInfo());
                             <?php if(!isset($_SESSION['userid'])){?>
                                 <a href="/member/login/login.php">로그인</a>
                             <?php }else{ ?>
-                                <a href="/member/login/logout.php"><?php echo $login_username ?>로그아웃</a>
+                                <a href="/member/login/logout.php"><?php echo $login_username ?> 로그아웃</a>
                             <?php } ?>
                             <a href=""></a>
                             <a href="<?php $_SERVER ?>/index.php">메인페이지로 <i class="fas fa-caret-right arrow"></i></a>
