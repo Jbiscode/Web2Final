@@ -84,9 +84,9 @@ $result = $connect->query($query ) or die($connect->errorInfo());
         </table>
     </div>
     <?php include_once "../inc/paging.inc.php"; ?>
-    <span class="util_menu">
+    <div class="util_menu">
         <a href="./insert.php" class="btn_write">쓰기</a>
-    </span>
+    </div>
 
 </body>
 </html>
