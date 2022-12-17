@@ -1,3 +1,16 @@
+<?php 
+include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/inc/dbconn.php";
+include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/inc/session.php";
+
+if(isset($userid)){ ?>
+    <script>
+      alert( "로그인 상태에서는 접근할 수 없습니다." );
+      history.back();
+      <?php session_destroy(); ?>
+    </script>
+<?php } ?>
+
+
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -5,7 +18,7 @@
     <title>로그인 화면</title>
     <link rel="stylesheet" href="/styles/login.css" />
     <script src="/scripts/index.js"></script>
-  </head>
+    </head>
   <body>
     <div class="login-card">
       <h2>로그인</h2>

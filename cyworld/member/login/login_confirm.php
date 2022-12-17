@@ -8,13 +8,16 @@ $userpw = $_POST['user_pw'];
 $query = "SELECT * FROM member WHERE userid = '$userid'";
 $result = $connect->query($query) or die($connect->errorInfo());
 $memberObj = $result->fetch();
-if( $userpw == $memberObj["userpw"] ){
+if( $userpw == $memberObj["userpw"]){
         $_SESSION['userid'] = $userid;
     ?>
     <script>
-        alert( "로그인 되었습니다." );
+    setTimeout(function(){
         location.href = "/index.php";
+    },3000);
     </script>
+    <link rel="stylesheet" href="/styles/loader.css">
+    <span class="loader"></span>
 <?php
 }else{
     ?>

@@ -1,6 +1,7 @@
 <?php
 include "./inc/dbconn.php";
-session_start();
+include "./inc/session.php";
+
 $seq = $_GET['seq'];
 
 $query = "SELECT * FROM member WHERE seq = '$seq'";
@@ -111,9 +112,9 @@ $result1 = $connect->query($query) or die($connect->errorInfo());
                         <div class="right__header__title">사이좋은 사람들, 싸이월드</div>
                         <div class="right__header__setting">
                             <?php if(!isset($_SESSION['userid'])){?>
-                                <a href="/member/login/login.html">로그인</a>
+                                <a href="/member/login/login.php">로그인</a>
                             <?php }else{ ?>
-                                <a href="/member/login/logout.php">로그아웃</a>
+                                <a href="/member/login/logout.php"><?php echo $login_username ?>로그아웃</a>
                             <?php } ?>
                             <a href=""></a>
                             <a href="<?php $_SERVER ?>/index.php">메인페이지로 <i class="fas fa-caret-right arrow"></i></a>

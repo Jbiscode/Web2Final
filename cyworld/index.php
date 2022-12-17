@@ -34,7 +34,7 @@ include_once "./inc/session.php";
                             지금 바로 싸이월드에 접속하세요!
                         </h1>
                         <div id="login_container">
-                            <a href="<?php echo $_SERVER ?>/member/login/login.html">
+                            <a href="<?php echo $_SERVER ?>/member/login/login.php">
                                 <img src="https://cyworld.com/img/svg/logo_cyworld.svg" alt="">로그인
                             </a>
                         </div>
