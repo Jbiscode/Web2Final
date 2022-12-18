@@ -1,19 +1,23 @@
 <?php
 
 include "../inc/dbconn.php";
-
+include "../inc/session.php";
+if( !isset($_SESSION["userid"]) ){
+    echo "로그인 후 이용해주세요";
+    ?>
+    <script>
+        setTimeout(function (){
+            location.href = "/member/login/login.php";
+        }, 1000 );
+    </script>
+    <?php
+    exit;
+}
 $title = $_POST["title"];
 $writer_name = $_POST["writer_name"];
 $content = $_POST["content"];
 
 
-//$len = 100;
-//$originValue1 = $title;
-//$originValue2 = $writer_name;
-//for( $i=0; $i<$len; $i++ ){
-
-//    $title = $originValue1 . $i;
-//    $writer_name = $originValue2 . $i;
 //2. 쿼리 생성
     $query = "INSERT INTO freeboard (
                     title

@@ -1,3 +1,16 @@
+<?php 
+include "../inc/session.php";
+if( !isset($_SESSION["userid"]) ){
+    echo "로그인 후 이용해주세요";
+    ?>
+    <script>
+        setTimeout(function (){
+            history.back();
+        }, 1000 );
+    </script>
+    <?php
+    exit;
+} ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,8 +43,8 @@
 <body>
 
 <form name="myform" action="/게시판/insert_confirm.php" method="post" onsubmit="return test();">
+    작성자 : <?php echo $login_username ?><input type="hidden" name="writer_name"><br>
     제목 : <input type="text" name="title"><br>
-    작성자 : <input type="text" name="writer_name"><br>
     내용 : <textarea name="content" cols="40" rows="20"></textarea>
     <button>전송</button>
 </form>
