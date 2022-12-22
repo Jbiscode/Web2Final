@@ -7,12 +7,21 @@ if( isset($_REQUEST['seq']) == false ){
     echo "잘못된 접근입니다.";
     exit;
 }
-
 $seq = $_REQUEST['seq'];
 
+$query = "select count( * ) as cnt from visit WHERE user_seq = $seq";
+$result = $connect->query( $query ) or die($connect->errorInfo());
+$resultData = $result->fetch();
+
+$totalCnt = $resultData["cnt"];
+$viewCnt = 5;
+$pageCnt = $totalCnt / $viewCnt;
+$pageNum = isset($_REQUEST['page_num']) ? $_REQUEST['page_num'] : 1;
+
+$startIndex = ($pageNum-1) * $viewCnt;
 
 // 방명록 상세 가져오기
-$query = "select * from visit WHERE user_seq = $seq ORDER BY reg_date DESC";
+$query = "select * from visit WHERE user_seq = $seq ORDER BY reg_date DESC LIMIT $startIndex, $viewCnt";
 $result = $connect->query( $query ) or die($connect->errorInfo());
 
 ?>
@@ -42,7 +51,7 @@ $result = $connect->query( $query ) or die($connect->errorInfo());
                 <span>
                     <img id="visitor_image" src="/images/profile_pic/<?php 
                     if (isset($_SESSION['userid'])) {
-                        echo $memberObj['profilepic'];
+                        echo $login_pic;
                     } else {
                         echo "basic_pic.png";}?>">
                 </span>
@@ -70,7 +79,7 @@ $result = $connect->query( $query ) or die($connect->errorInfo());
             <?php
         }
         ?>
-        
+        <?php include_once "../inc/paging.visit.php"; ?>
     </div>
 
 </body>

@@ -3,12 +3,20 @@
 include "../inc/dbconn.php";
 
 $searchKey = isset($_REQUEST['search_key']) ? $_REQUEST['search_key'] : "";
+$searchfield = isset($_REQUEST['search_field']) ? $_REQUEST['search_field'] : "";
 
 // 게시글의 전체 갯수 가져오기
 $query = "select count( * ) as cnt from freeboard";
-if( $searchKey ) {
-    $query = $query . " WHERE title like '%$searchKey%' or writer_name like '%$searchKey%'";
+if( $searchfield == "all" ) {
+    $query = $query . " WHERE title like '%$searchKey%' or writer_name like '%$searchKey%' or content like '%$searchKey%'";
+}elseif($searchfield == "title"){
+    $query = $query . " WHERE title like '%$searchKey%'";
+}elseif($searchfield == "content"){
+    $query = $query . " WHERE content like '%$searchKey%'";
+}elseif($searchfield == "writer_name"){
+    $query = $query . " WHERE writer_name like '%$searchKey%'";
 }
+
 $result = $connect->query( $query ) or die($connect->errorInfo());
 $resultData = $result->fetch();
 
@@ -21,8 +29,14 @@ $startIndex = ($pageNum-1) * $viewCnt;
 
 //2. 쿼리 생성
 $query = "select * from freeboard";
-if( $searchKey ) {
-    $query = $query . " WHERE title like '%$searchKey%' or writer_name like '%$searchKey%'";
+if( $searchfield == "all" ) {
+    $query = $query . " WHERE title like '%$searchKey%' or writer_name like '%$searchKey%' or content like '%$searchKey%'";
+}elseif($searchfield == "title"){
+    $query = $query . " WHERE title like '%$searchKey%'";
+}elseif($searchfield == "content"){
+    $query = $query . " WHERE content like '%$searchKey%'";
+}elseif($searchfield == "writer_name"){
+    $query = $query . " WHERE writer_name like '%$searchKey%'";
 }
 $query = $query . " order by seq DESC LIMIT $startIndex, $viewCnt";
 
@@ -32,7 +46,7 @@ $result = $connect->query($query ) or die($connect->errorInfo());
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>자유게시판 리스트</title>

@@ -1,6 +1,7 @@
 <?php
 include "./inc/dbconn.php";
 include_once "./inc/session.php";
+$_SESSION['now_url'] =$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +35,7 @@ include_once "./inc/session.php";
                             지금 바로 싸이월드에 접속하세요!
                         </h1>
                         <div id="login_container">
-                            <a href="<?php echo $_SERVER ?>/member/login/login.php">
+                            <a href="<?php echo SERVER_ADDR ?>/member/login/login.php">
                                 <img src="https://cyworld.com/img/svg/logo_cyworld.svg" alt="">로그인
                             </a>
                         </div>
@@ -48,12 +49,12 @@ include_once "./inc/session.php";
                         <?php echo $login_username ?>님! 어서오세요!
                         </h1>
                         <div id="login_container">
-                            <a href="<?php echo $_SERVER ?>/main.php?seq=<?php echo $login_seq ?>">
+                            <a href="<?php echo SERVER_ADDR ?>/main.php?seq=<?php echo $login_seq ?>">
                                 <img src="https://cyworld.com/img/svg/logo_cyworld.svg" alt="">미니홈피로 이동 
                             </a>
                         </div>
                         <p>
-                            <a href="<?php echo $_SERVER ?>/member/login/logout.php">로그아웃</a>
+                            <a href="<?php echo SERVER_ADDR ?>/member/login/logout.php">로그아웃</a>
                         </p>
                     </div>
                     <?php } ?>

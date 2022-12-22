@@ -1,14 +1,11 @@
 <?php 
-include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/inc/dbconn.php";
 session_start();
 
 if(isset($_SESSION['userid'])){
     $userid = $_SESSION['userid'];
-    $query = "SELECT * FROM member WHERE userid = '$userid'";
-    $result = $connect->query($query) or die($connect->errorInfo());
-    $memberObj = $result->fetch();
-
-    $login_username = $memberObj['username'];
-    $login_seq = $memberObj['seq'];
+    $login_username = $_SESSION['username'];
+    $login_seq = $_SESSION['seq'];
+    $login_pic = $_SESSION['profilepic'];
+    $now_url = isset($_SESSION['now_url']) ? $_SESSION['now_url'] : "";
 }
 

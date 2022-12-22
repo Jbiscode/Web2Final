@@ -6,10 +6,6 @@ $searchKey = isset($_REQUEST['search_key']) ? $_REQUEST['search_key'] : "";
 
 // 게시글의 전체 갯수 가져오기
 $query = "select count( * ) as cnt from freeboard";
-if( $searchKey ) {
-    $query = $query . " WHERE title like '%$searchKey%' or writer_name like '%$searchKey%'";
-}
-
 $result = $connect->query( $query ) or die($connect->errorInfo());
 $resultData = $result->fetch();
 
@@ -22,9 +18,6 @@ $startIndex = ($pageNum-1) * $viewCnt;
 
 //2. 쿼리 생성
 $query = "select * from freeboard";
-if( $searchKey ) {
-    $query = $query . " WHERE title like '%$searchKey%' or writer_name like '%$searchKey%'";
-}
 $query = $query . " order by seq DESC LIMIT $startIndex, $viewCnt";
 
 //3. 쿼리 실행
@@ -36,7 +29,7 @@ $result = $connect->query($query ) or die($connect->errorInfo());
 <head>
     <meta charset="UTF-8">
     <title>자유게시판 리스트</title>
-    <link rel="stylesheet" href="../styles/freeboard.css">
+    <link rel="stylesheet" href="<?php SERVER_ADDR ?>/styles/freeboard.css">
 
 </head>
 <body>

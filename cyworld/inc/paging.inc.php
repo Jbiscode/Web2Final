@@ -13,7 +13,7 @@ if( !$pageNum || !$viewCnt || !$pageCnt ){
 <style>
     .paging_wrap{ width: 473px; }
     .paging_wrap ul { width: 473px; margin: 20px auto 0 auto;}
-    .paging_wrap ul li{ float: left; list-style-type: none; width: 35px; height: 30px; text-align: center; padding: 0px 5px; }
+    .paging_wrap ul li{ float: left; list-style-type: none; width: 26px; height: 30px; text-align: center; padding: 0px 3px; }
     .page_arrow{ color:blue ;text-decoration: none; font-weight: bold;}
     .page_num{ color: #000;text-decoration: none; font-size: 18px;}
     .Selected{ font-weight: bold; color: red; text-decoration: none; font-size: 20px;}

@@ -10,15 +10,14 @@ $row = $result->fetch();
 
 $query = "SELECT * FROM member";
 $result1 = $connect->query($query) or die($connect->errorInfo());
-
-
+$_SESSION['now_url'] =$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 ?>
 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>사이좋은 사람들, 싸이월드</title>
+    <title>미니홈피</title>
     <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -97,7 +96,7 @@ $result1 = $connect->query($query) or die($connect->errorInfo());
                                 $index = 0;
                                 while ($map = $result1->fetch()) {
                                 ?>
-                                    <option value="<?php echo $_SERVER ?>/main.php?seq=<?php echo $map['seq'] ?>"><?php echo $map['username'] ?>(<?php echo $map['userid'] ?>)</option>
+                                    <option value="<?php echo SERVER_ADDR ?>/main.php?seq=<?php echo $map['seq'] ?>"><?php echo $map['username'] ?>(<?php echo $map['userid'] ?>)</option>
                                 <?php
                                     $index++;
                                 }
@@ -106,10 +105,15 @@ $result1 = $connect->query($query) or die($connect->errorInfo());
                             </div>
                         </div>
                     </div>
+                    <?php if(isset($_SESSION['userid'])){ ?>
+                        <?php if($login_seq == $row['seq']){ ?>
+                        <a class="profile__detail profile__update" href="/member/update/update_access.php?seq=<?php echo $row['seq']; ?>">정보수정</a>
+                        <?php } ?>
+                    <?php } ?>
                 </div>
                 <div class="wrapper__right">
                     <div class="wrapper__right__header">
-                        <div class="right__header__title">사이좋은 사람들, 싸이월드</div>
+                        <div class="right__header__title">Jbiscode</div>
                         <div class="right__header__setting">
                             <?php if(!isset($_SESSION['userid'])){?>
                                 <a href="/member/login/login.php">로그인</a>
@@ -117,7 +121,7 @@ $result1 = $connect->query($query) or die($connect->errorInfo());
                                 <a href="/member/login/logout.php"><?php echo $login_username ?> 로그아웃</a>
                             <?php } ?>
                             <a href=""></a>
-                            <a href="<?php $_SERVER ?>/index.php">메인페이지로 <i class="fas fa-caret-right arrow"></i></a>
+                            <a href="<?php SERVER_ADDR ?>/index.php">메인페이지로 <i class="fas fa-caret-right arrow"></i></a>
                         </div>
                     </div>
                     <div class="wrapper__right__body">

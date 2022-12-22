@@ -1,18 +1,7 @@
 <?php
 
 include "../inc/dbconn.php";
-include "../inc/session.php";
-if( !isset($_SESSION["userid"]) ){
-    echo "로그인 후 이용해주세요";
-    ?>
-    <script>
-        setTimeout(function (){
-            location.href = "/member/login/login.php";
-        }, 1000 );
-    </script>
-    <?php
-    exit;
-}
+
 $title = $_POST["title"];
 $writer_name = $_POST["writer_name"];
 $content = $_POST["content"];

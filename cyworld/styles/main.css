@@ -119,6 +119,24 @@
 .profile__detail > span {
     padding-left: 10px;
 }
+
+.profile__update{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: rgba(255, 0, 0, 0.617);
+    width: 40px;
+    height: 20px;
+    position: relative;
+    left: 155px;
+    bottom: 170px;
+    border: 1px solid rgba(255, 0, 0, 0.218);
+}
+.profile__update:hover{
+    color: rgb(255, 0, 0);
+    border: 1px solid rgb(255, 0, 0);
+}
 .fas,.fab{
     color: black;
     margin-right: 10px;
