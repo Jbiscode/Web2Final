@@ -1,5 +1,5 @@
 <?php 
-include "../inc/session.php";
+include "../assets/inc/session.php";
 if( !isset($_SESSION["userid"]) ){
     echo "로그인 후 이용해주세요";
     ?>

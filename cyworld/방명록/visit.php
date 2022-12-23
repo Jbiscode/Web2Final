@@ -1,7 +1,7 @@
 <?php
 
-include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/inc/dbconn.php";
-include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/inc/session.php";
+include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/assets/inc/dbconn.php";
+include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/assets/inc/session.php";
 
 if( isset($_REQUEST['seq']) == false ){
     echo "잘못된 접근입니다.";
@@ -31,8 +31,8 @@ $result = $connect->query( $query ) or die($connect->errorInfo());
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="/styles/freeboard.css">
-    <script src="/scripts/index.js"></script>
+    <link rel="stylesheet" href="/assets/css/freeboard.css">
+    <script src="/assets/js/index.js"></script>
 </head>
 <body>
     <div id="visit_insert_wrap">
@@ -49,7 +49,7 @@ $result = $connect->query( $query ) or die($connect->errorInfo());
             
             <div>
                 <span>
-                    <img id="visitor_image" src="/images/profile_pic/<?php 
+                    <img id="visitor_image" src="/assets/imgs/profile_pic/<?php 
                     if (isset($_SESSION['userid'])) {
                         echo $login_pic;
                     } else {
@@ -72,14 +72,14 @@ $result = $connect->query( $query ) or die($connect->errorInfo());
                     <a href="/방명록/delete_access.php?seq=<?php echo $seq; ?>&&visitor_name=<?php echo $row['visitor_name'] ?>&&visit_seq=<?php echo $row['seq'] ?>">삭제</a>
                 </div>
                 <div id="visit_list_content">
-                    <img id='comment_img' src="/images/profile_pic/<?php echo $row['profilepic'] ?>" alt="1">
+                    <img id='comment_img' src="/assets/imgs/profile_pic/<?php echo $row['profilepic'] ?>" alt="1">
                     <p1><?php echo $row["content"]; ?></p1>
                 </div>
                     <hr>
             <?php
         }
         ?>
-        <?php include_once "../inc/paging.visit.php"; ?>
+        <?php include_once "../assets/inc/paging.visit.php"; ?>
     </div>
 
 </body>

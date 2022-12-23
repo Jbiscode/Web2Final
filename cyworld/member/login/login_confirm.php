@@ -1,5 +1,5 @@
 <?php
-include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/inc/dbconn.php";
+include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/assets/inc/dbconn.php";
 session_start();
 
 $userid = $_POST['user_id'];
@@ -19,7 +19,7 @@ if( $userpw == $memberObj["userpw"]){
         location.href = "http://<?php echo $now_url ?>";
     },2000);
     </script>
-    <link rel="stylesheet" href="/styles/loader.css">
+    <link rel="stylesheet" href="/assets/css/loader.css">
     <span class="loader"></span>
 <?php
 }else{

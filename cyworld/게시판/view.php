@@ -1,6 +1,6 @@
 <?php
 
-include "../inc/dbconn.php";
+include "../assets/inc/dbconn.php";
 
 if( isset($_REQUEST['seq']) == false ){
     echo "잘못된 접근입니다.";
@@ -24,8 +24,8 @@ $resultData = $result->fetch();
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="../styles/freeboard.css">
-    <script src="/scripts/index.js"></script>
+    <link rel="stylesheet" href="../assets/css/freeboard.css">
+    <script src="/assets/js/index.js"></script>
 </head>
 <body>
 <div id="wrap">
@@ -75,7 +75,7 @@ $resultData = $result->fetch();
                     (<?php echo $row["reg_date"]; ?>)
                 </div>
                 <div>
-                    <img id='comment_img' src="../images/profile_pic/<?php echo $row['profilepic'] ?>" alt="1">
+                    <img id='comment_img' src="../assets/imgs/profile_pic/<?php echo $row['profilepic'] ?>" alt="1">
                     <p1>내용 : <?php echo $row["content"]; ?></p1>
                 </div>
                     <hr>

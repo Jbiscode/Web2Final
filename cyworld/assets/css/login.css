@@ -19,7 +19,7 @@ body {
   place-items: center;
   margin: 0;
   padding: 0 24px;
-  background-image: url("/images/login_background.svg");
+  background-image: url("/assets/imgs/login_background.svg");
   background-repeat: no-repeat;
   background-size: cover;
   font-family: "Euclid Circular A";

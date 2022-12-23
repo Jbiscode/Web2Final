@@ -8,7 +8,7 @@
 .background{
     width: 1024px;
     height: 600px;
-    background-image: url("../images/background.png");
+    background-image: url("/assets/imgs/background.png");
     padding: 20px 0px 0px 20px;
     background-repeat : no-repeat;
     background-size :cover
@@ -18,7 +18,7 @@
 .outerbox{
     width: 808px;
     height: 544px;
-    background-image: url("../images/outerbox.png");
+    background-image: url("/assets/imgs/outerbox.png");
     /* background-repeat: no-repeat; */
     background-size : cover;
 }

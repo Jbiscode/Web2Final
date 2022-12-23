@@ -1,6 +1,6 @@
 <?php
-include "./inc/dbconn.php";
-include "./inc/session.php";
+include "./assets/inc/dbconn.php";
+include "./assets/inc/session.php";
 
 $seq = $_GET['seq'];
 
@@ -18,12 +18,12 @@ $_SESSION['now_url'] =$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 <head>
     <meta charset="UTF-8">
     <title>미니홈피</title>
-    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cute+Font&display=swap" rel="stylesheet">
-    <script src="/scripts/index.js"></script>
+    <script src="/assets/js/index.js"></script>
     <script>
     function menuHome(){
         /* 눌렀을때 선택된것 표시하기 설정 */
@@ -66,7 +66,7 @@ $_SESSION['now_url'] =$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
                     </div>
                     <div class="wrapper__left__body">
                         <div class="left__body__header">
-                            <div class="left__body__header__gray"><img class="main_pic" src="images/profile_pic/<?php echo $row['profilepic'] ?>"></div>
+                            <div class="left__body__header__gray"><img class="main_pic" src="assets/imgs/profile_pic/<?php echo $row['profilepic'] ?>"></div>
                             <div class="left__body__header__line"></div>
                         </div>
                         <div class="left__body__profile">

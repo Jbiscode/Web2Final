@@ -1,6 +1,6 @@
 <?php
 
-include "../inc/dbconn.php";
+include "../assets/inc/dbconn.php";
 
 $userpw=$_POST['comment_pw'];
 // $userpw=$_POST['userpw']

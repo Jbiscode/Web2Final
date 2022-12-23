@@ -1,6 +1,6 @@
 <?php
 
-include "../inc/dbconn.php";
+include "../assets/inc/dbconn.php";
 
 $title = $_POST["title"];
 $writer_name = $_POST["writer_name"];

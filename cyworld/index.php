@@ -1,6 +1,6 @@
 <?php
-include "./inc/dbconn.php";
-include_once "./inc/session.php";
+include "./assets/inc/dbconn.php";
+include_once "./assets/inc/session.php";
 $_SESSION['now_url'] =$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 ?>
 
@@ -10,7 +10,7 @@ $_SESSION['now_url'] =$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 <head>
     <meta charset="UTF-8">
     <title>회원 리스트</title>
-    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
 </head>
 
 <body>
@@ -60,8 +60,8 @@ $_SESSION['now_url'] =$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
                     <?php } ?>
                 </div>
                 <div id="right_container">
-                    <img src="./images/indeximg2.png" alt="">
-                    <img src="./images/indeximg3.png" alt="">
+                    <img src="./assets/imgs/indeximg2.png" alt="">
+                    <img src="./assets/imgs/indeximg3.png" alt="">
                 </div>
         </div>
     </div>

@@ -1,5 +1,5 @@
 <?php
-include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/inc/dbconn.php";
+include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/assets/inc/dbconn.php";
 $user_id = $_POST['user_id'];
 
 $query = "SELECT * FROM member WHERE userid = '$user_id'";
@@ -59,7 +59,7 @@ $man = $result->fetch();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/register.css">
+    <link rel="stylesheet" href="/assets/css/register.css">
     <title>수정 완료!</title>
 </head>
 

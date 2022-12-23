@@ -1,6 +1,6 @@
 <?php
 
-include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/inc/dbconn.php";
+include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/assets/inc/dbconn.php";
 
 $seq = $_GET['seq'];
 $visitor_name = $_GET['visitor_name'];

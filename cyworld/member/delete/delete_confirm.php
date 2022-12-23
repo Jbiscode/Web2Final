@@ -1,6 +1,6 @@
 <?php
 
-include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/inc/dbconn.php";
+include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/assets/inc/dbconn.php";
 
 $userid = $_POST['user_id'];
 $userpw = $_POST['user_pw0'];
@@ -35,7 +35,7 @@ if ($userpw !== $memberObj["userpw"]) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/register.css">
+    <link rel="stylesheet" href="/assets/css/register.css">
     <title>회원 삭제 확인</title>
 </head>
 

@@ -1,6 +1,6 @@
 <?php 
-include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/inc/dbconn.php";
-include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/inc/session.php";
+include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/assets/inc/dbconn.php";
+include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/assets/inc/session.php";
 
 if(isset($userid)){ ?>
     <script>
@@ -16,8 +16,8 @@ if(isset($userid)){ ?>
   <head>
     <meta charset="UTF-8">
     <title>로그인 화면</title>
-    <link rel="stylesheet" href="/styles/login.css" />
-    <script src="/scripts/index.js"></script>
+    <link rel="stylesheet" href="/assets/css/login.css" />
+    <script src="/assets/js/index.js"></script>
     </head>
   <body>
     <div class="login-card">

@@ -1,7 +1,7 @@
 <?php
 
-include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/inc/dbconn.php";
-include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/inc/session.php";
+include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/assets/inc/dbconn.php";
+include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/assets/inc/session.php";
 
 if (!isset($_SESSION['userid'])) {
     $userid = $_POST['visit_userid'];

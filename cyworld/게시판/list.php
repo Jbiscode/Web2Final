@@ -1,6 +1,6 @@
 <?php
 
-include "../inc/dbconn.php";
+include "../assets/inc/dbconn.php";
 
 $searchKey = isset($_REQUEST['search_key']) ? $_REQUEST['search_key'] : "";
 $searchfield = isset($_REQUEST['search_field']) ? $_REQUEST['search_field'] : "";
@@ -50,7 +50,7 @@ $result = $connect->query($query ) or die($connect->errorInfo());
 <head>
     <meta charset="UTF-8">
     <title>자유게시판 리스트</title>
-    <link rel="stylesheet" href="../styles/freeboard.css">
+    <link rel="stylesheet" href="../assets/css/freeboard.css">
 
 </head>
 <body>
@@ -98,7 +98,7 @@ $result = $connect->query($query ) or die($connect->errorInfo());
             </tbody>
         </table>
     </div>
-    <?php include_once "../inc/paging.inc.php"; ?>
+    <?php include_once "../assets/inc/paging.inc.php"; ?>
     <div class="util_menu">
         <a href="./insert.php" class="btn_write">쓰기</a>
     </div>
