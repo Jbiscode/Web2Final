@@ -1,5 +1,5 @@
 <?php
-include "assets/inc/dbconn.php";
+include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/assets/inc/dbconn.php";
 
 $user_id = $_POST['user_id'];
 $query = "SELECT * FROM member WHERE userid = '$user_id'";
@@ -117,7 +117,7 @@ $result = $connect->query( $query ) or die($connect->errorInfo());
         ?></li>
             <li>휴대폰 : <?php echo $user_phone0.'-'.$user_phone1.'-'.$user_phone2; ?></li>
         </ul>
-        <a id='go_back' href="/member/member_list.php"> 회원 리스트 보기</a>
+        <a id='go_back' href="/index.php"> 돌아가기</a>
     </div>
 </body>
 </html>
