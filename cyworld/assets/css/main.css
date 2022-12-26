@@ -159,6 +159,15 @@
     margin-bottom: 5px;
     color: gray;
 }
+#my_home_link{
+    text-decoration: none;
+    color: #808080;
+    font-size: 12px;
+}
+#my_home_link:hover{
+    color: rgba(0, 0, 255, 0.601);
+    font-weight: bold;
+}
 
 
 

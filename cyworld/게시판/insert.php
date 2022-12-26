@@ -43,7 +43,7 @@ if( !isset($_SESSION["userid"]) ){
 <body>
 
 <form name="myform" action="/게시판/insert_confirm.php" method="post" onsubmit="return test();">
-    작성자 : <?php echo $login_username ?><input type="hidden" name="writer_name"><br>
+    작성자 : <?php echo $login_username ?><input type="hidden" name="writer_name" value="<?php echo $login_username ?>"><br>
     제목 : <input type="text" name="title"><br>
     내용 : <textarea name="content" cols="40" rows="20"></textarea>
     <button>전송</button>

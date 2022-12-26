@@ -66,12 +66,12 @@ table{ border-collapse: collapse; }
     padding: 3px 5px;
 }
 
-/** 방명록 입력창 */
-#visit_insert_wrap{
+/** 방명록,댓글 입력창 */
+#visit_insert_wrap,#comment_insert_wrap{
     width: 100vh;
 }
 
-#visit_insert_form{
+#visit_insert_form,#comment_insert_form{
     display: flex;
     flex-direction: column;
     width: 100vh;
@@ -84,13 +84,13 @@ table{ border-collapse: collapse; }
     border-radius: 10px;
     font-size: 1.4rem;
 }
-#visitor_image{
+#visitor_image,#comment_image{
     width: 100px;
     height: 100px;
     margin-top: 10px;
 }
 
-#visitor_content{
+#visitor_content,#comment_content{
     resize: none;
     width: 290px;
     height: 80px;
@@ -99,25 +99,25 @@ table{ border-collapse: collapse; }
     border: 1px solid black;
     border-radius: 10px;
 }
-#visit_insert_form :nth-child(3){
+#visit_insert_form :nth-child(3),#comment_insert_form :nth-child(3){
     width: 430px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     
 }
-#visit_insert_form button{
+#visit_insert_form button,#comment_insert_form button{
     width: 80px;
     margin: 5px 0px 0px;
 }
 
-/** 방명록 리스트 */
-#visit_list_wrap{
+/** 방명록,댓글 리스트 */
+#visit_list_wrap,.comment_wrap{
     display: flex;
     flex-direction: column;
     font-size: 1.4rem;
 }
-#visit_list_header{
+#visit_list_header,#comment_list_header{
     display: flex;
     margin-left: 20px;
     padding:5px 30px;
@@ -127,10 +127,14 @@ table{ border-collapse: collapse; }
     justify-content: space-between;
     background-color: rgba(249, 206, 150, 0.763);
 }
-#visit_list_header :nth-child(2){
+#comment_list_header{
+    background-color:rgba(109, 223, 140, 0.363) !important;
+}
+
+#visit_list_header :nth-child(2),#comment_list_header :nth-child(2){
     padding-right: 110px;
 }
-#visit_list_content{
+#visit_list_content,#comment_list_content{
     display: flex;
     align-items: center;
     width: 400px;
@@ -138,7 +142,7 @@ table{ border-collapse: collapse; }
     margin:5px 0px 0px 20px;
     padding:5px 30px;
 }
-#visit_list_content > p1{
+#visit_list_content > p1,#comment_list_content >p1{
     padding: 10px;
 }
 

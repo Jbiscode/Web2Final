@@ -103,6 +103,7 @@ $_SESSION['now_url'] =$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
                                 ?>
                                 </select>
                             </div>
+                            <a id="my_home_link" href="<?php echo SERVER_ADDR ?>/main.php?seq=<?php echo $login_seq ?>">내 미니홈피</a>
                         </div>
                     </div>
                     <?php if(isset($_SESSION['userid'])){ ?>

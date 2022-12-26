@@ -1,7 +1,9 @@
 <?php
 
 include "../assets/inc/dbconn.php";
+include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/assets/inc/session.php";
 
+if (!isset($_SESSION['userid'])) {
 $userpw=$_POST['comment_pw'];
 // $userpw=$_POST['userpw']
 $userid = $_POST['comment_userid'];
@@ -29,7 +31,16 @@ if( $userpw !== $man["userpw"] ){
 <?php
     exit;
 }
+}else{
+    $userid = $_SESSION['userid'];
+    $content = $_POST["comment_content"];
 
+    //3. 쿼리 실행
+    $query = "SELECT * FROM member WHERE userid = '$userid'";
+    $result = $connect->query($query) or die($connect->errorInfo());
+    $man = $result->fetch();
+
+}  
 
 $originSeq = $_POST["origin_seq"];
 $writer_name = $man["username"];

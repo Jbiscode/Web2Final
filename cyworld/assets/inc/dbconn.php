@@ -7,7 +7,7 @@ $mysql_password = '@spqjdpseld96@';
 $mysql_database = 'class';
 $mysql_port = '3306';
 $mysql_charset = 'utf8';
-define('SERVER_ADDR', 'http://118.221.163.157:8888');
+define('SERVER_ADDR', 'http://118.221.163.157:8888/');
 
 //1. DB 연결
 $dsn = 'mysql:host='.$mysql_hostname.';dbname='.$mysql_database.';port='.$mysql_port.';charset='.$mysql_charset;
