@@ -1,5 +1,5 @@
 <?php
-include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/inc/dbconn.php";
+include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/assets/inc/dbconn.php";
 $userpw=$_POST['user_pw0'];
 // $userpw=$_POST['userpw']
 
@@ -29,8 +29,8 @@ if( $userpw !== $man["userpw"] ){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원정보 수정</title>
 
-    <script src="/scripts/index.js"></script>
-    <link rel="stylesheet" href="/styles/register.css">
+    <script src="/assets/js/index.js"></script>
+    <link rel="stylesheet" href="/assets/css/register.css">
     
 </head>
 <body>

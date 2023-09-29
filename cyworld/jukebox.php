@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>쥬크박스</title>
-    <link rel="stylesheet" href="./styles/jukebox.css">
+    <link rel="stylesheet" href="./assets/css/jukebox.css">
 </head>
 <body>
     <div class="juke__wrap">
@@ -15,17 +15,17 @@
             <div class="juke__line"></div>
             <div class="juke__body">
                 <div class="juke__list">
-                    <img class="juke__pic" src="./images/jukebox-01.png" alt="1">
+                    <img class="juke__pic" src="./assets/imgs/jukebox-01.png" alt="1">
                     <div class="juke__music__name">Y(Please Tell Me Why)</div>
                     <div class="juke__singer__name">프리스타일</div>
                 </div>
                 <div class="juke__list">
-                    <img class="juke__pic" src="./images/jukebox-02.png" alt="2">
+                    <img class="juke__pic" src="./assets/imgs/jukebox-02.png" alt="2">
                     <div class="juke__music__name">눈의 꽃</div>
                     <div class="juke__singer__name">박효신</div>
                 </div>
                 <div class="juke__list">
-                    <img class="juke__pic" src="./images/jukebox-03.png" alt="3">
+                    <img class="juke__pic" src="./assets/imgs/jukebox-03.png" alt="3">
                     <div class="juke__music__name">사랑했나봐</div>
                     <div class="juke__singer__name">윤도현</div>
                 </div>

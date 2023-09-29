@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="./styles/game.css">
-    <script src="/scripts/lotto.js"></script>
+    <link rel="stylesheet" href="./assets/css/game.css">
+    <script src="/assets/js/lotto.js"></script>
     
     <script>
         function startWord(){
@@ -36,7 +36,7 @@
             <div class="divided__line"></div>
         </div>
         <div class="game__container">
-            <img src="./images/word.png" alt="끝말잇기">
+            <img src="./assets/imgs/word.png" alt="끝말잇기">
             <div class="game__title">끝말잇기</div>
             <div class="game__subtitle">제시어 : <span id="word">바나나</span></div>
             <div class="word__text">
@@ -46,7 +46,7 @@
             <div id="result" class="word__result">결과!</div>
         </div>
         <div class="game__container">
-            <img src="./images/lotto.png" alt="로또">
+            <img src="./assets/imgs/lotto.png" alt="로또">
             <div class="game__title">LOTTO</div> 
             <div class="game__subtitle">버튼을 누르세요.</div>
             <div class="game__number">

@@ -1,5 +1,5 @@
 <?php
-include "./inc/dbconn.php";
+include "./assets/inc/dbconn.php";
 
 $seq = $_GET['seq'];
 
@@ -15,7 +15,7 @@ $row = $result->fetch();
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
-    <link rel="stylesheet" href="/styles/home.css">
+    <link rel="stylesheet" href="/assets/css/home.css">
 </head>
 <body>
     <div class="wrapper">

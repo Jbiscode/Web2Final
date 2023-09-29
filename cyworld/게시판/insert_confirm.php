@@ -1,19 +1,12 @@
 <?php
 
-include "../inc/dbconn.php";
+include "../assets/inc/dbconn.php";
 
 $title = $_POST["title"];
 $writer_name = $_POST["writer_name"];
 $content = $_POST["content"];
 
 
-//$len = 100;
-//$originValue1 = $title;
-//$originValue2 = $writer_name;
-//for( $i=0; $i<$len; $i++ ){
-
-//    $title = $originValue1 . $i;
-//    $writer_name = $originValue2 . $i;
 //2. 쿼리 생성
     $query = "INSERT INTO freeboard (
                     title

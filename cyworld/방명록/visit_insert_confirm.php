@@ -1,45 +1,55 @@
 <?php
 
-include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/inc/dbconn.php";
+include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/assets/inc/dbconn.php";
+include "/Users/sajaebin/Documents/Web2FinalHW/cyworld/assets/inc/session.php";
 
-$userpw=$_POST['visit_pw'];
-// $userpw=$_POST['userpw']
-$userid = $_POST['visit_userid'];
-$content = $_POST["visitor_content"];
+if (!isset($_SESSION['userid'])) {
+    $userid = $_POST['visit_userid'];
+    $userpw = $_POST['visit_pw'];
+    $content = $_POST["visitor_content"];
 
-//3. 쿼리 실행
-$query = "SELECT * FROM member WHERE userid = '$userid'";
-$result = $connect->query($query) or die($connect->errorInfo());
-$man = $result->fetch();
-if( !$man ){
-    ?>
+    //3. 쿼리 실행
+    $query = "SELECT * FROM member WHERE userid = '$userid'";
+    $result = $connect->query($query) or die($connect->errorInfo());
+    $man = $result->fetch();
+    if (!$man) {
+?>
     <script>
         alert( "존재하지 않는 아이디입니다." );
         history.back();
     </script>
 <?php
-    exit;
-}
+        exit;
+    }
 
-if( $userpw !== $man["userpw"] ){
-    ?>
+    if ($userpw !== $man["userpw"]) {
+?>
     <script>
         alert( "비밀번호가 틀렸습니다." );
         history.back();
     </script>
 <?php
-    exit;
-}
-if( $content == "" ){
-    ?>
+        exit;
+    }
+    if ($content == "") {
+?>
     <script>
         alert( "내용을 입력해주세요." );
         history.back();
     </script>
 <?php
-    exit;
-}
+        exit;
+    }
+}else{
+    $userid = $_SESSION['userid'];
+    $content = $_POST["visitor_content"];
 
+    //3. 쿼리 실행
+    $query = "SELECT * FROM member WHERE userid = '$userid'";
+    $result = $connect->query($query) or die($connect->errorInfo());
+    $man = $result->fetch();
+
+}
 
 $userSeq = $_POST["user_seq"];
 $visitor_name = $man["username"];

@@ -1,5 +1,5 @@
 <?php
-include "../inc/dbconn.php";
+include "../assets/inc/dbconn.php";
 
 //2. 쿼리 생성
 $query = ' select * from member';
@@ -24,7 +24,7 @@ $result = $connect->query($query) or die($connect->errorInfo());
 <head>
     <meta charset="UTF-8">
     <title>회원 리스트</title>
-    <link rel="stylesheet" href="../styles/register.css">
+    <link rel="stylesheet" href="../assets/css/register.css">
 </head>
 
 <body>
@@ -64,8 +64,8 @@ $result = $connect->query($query) or die($connect->errorInfo());
                         <?php echo $row["reg_date"]; ?>
                     </td>
                     <td>
-                        <a class="list_btn" href="/member/update/update_access.php?seq=<?php echo $row['seq']; ?>">정보수정
-                            <a class="list_btn" href="/member/delete/delete_access.php?seq=<?php echo $row['seq']; ?>">삭제
+                        <a class="list_btn" href="/member/update/update_access.php?seq=<?php echo $row['seq']; ?>">정보수정</a>
+                            <a class="list_btn" href="/member/delete/delete_access.php?seq=<?php echo $row['seq']; ?>">삭제</a>
                     </td>
                 </tr>
                 <?php

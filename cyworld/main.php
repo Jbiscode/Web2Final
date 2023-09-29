@@ -1,5 +1,6 @@
 <?php
-include "./inc/dbconn.php";
+include "./assets/inc/dbconn.php";
+include "./assets/inc/session.php";
 
 $seq = $_GET['seq'];
 
@@ -9,21 +10,20 @@ $row = $result->fetch();
 
 $query = "SELECT * FROM member";
 $result1 = $connect->query($query) or die($connect->errorInfo());
-
-
+$_SESSION['now_url'] =$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 ?>
 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>사이좋은 사람들, 싸이월드</title>
-    <link rel="stylesheet" href="./styles/index.css">
+    <title>미니홈피</title>
+    <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cute+Font&display=swap" rel="stylesheet">
-    <script src="/scripts/index.js"></script>
+    <script src="/assets/js/index.js"></script>
     <script>
     function menuHome(){
         /* 눌렀을때 선택된것 표시하기 설정 */
@@ -66,7 +66,7 @@ $result1 = $connect->query($query) or die($connect->errorInfo());
                     </div>
                     <div class="wrapper__left__body">
                         <div class="left__body__header">
-                            <div class="left__body__header__gray"><img class="main_pic" src="images/profile_pic/<?php echo $row['profilepic'] ?>"></div>
+                            <div class="left__body__header__gray"><img class="main_pic" src="assets/imgs/profile_pic/<?php echo $row['profilepic'] ?>"></div>
                             <div class="left__body__header__line"></div>
                         </div>
                         <div class="left__body__profile">
@@ -96,20 +96,34 @@ $result1 = $connect->query($query) or die($connect->errorInfo());
                                 $index = 0;
                                 while ($map = $result1->fetch()) {
                                 ?>
-                                    <option value="<?php echo $_SERVER ?>/main.php?seq=<?php echo $map['seq'] ?>"><?php echo $map['username'] ?>(<?php echo $map['userid'] ?>)</option>
+                                    <option value="<?php echo SERVER_ADDR ?>/main.php?seq=<?php echo $map['seq'] ?>"><?php echo $map['username'] ?>(<?php echo $map['userid'] ?>)</option>
                                 <?php
                                     $index++;
                                 }
                                 ?>
                                 </select>
                             </div>
+                            <a id="my_home_link" href="<?php echo SERVER_ADDR ?>/main.php?seq=<?php echo $login_seq ?>">내 미니홈피</a>
                         </div>
                     </div>
+                    <?php if(isset($_SESSION['userid'])){ ?>
+                        <?php if($login_seq == $row['seq']){ ?>
+                        <a class="profile__detail profile__update" href="/member/update/update_access.php?seq=<?php echo $row['seq']; ?>">정보수정</a>
+                        <?php } ?>
+                    <?php } ?>
                 </div>
                 <div class="wrapper__right">
                     <div class="wrapper__right__header">
-                        <div class="right__header__title">사이좋은 사람들, 싸이월드</div>
-                        <div class="right__header__setting"><a href="<?php $_SERVER ?>/member/member_list.php">회원목록 보기 <i class="fas fa-caret-right arrow"></i></a></div>
+                        <div class="right__header__title">Jbiscode</div>
+                        <div class="right__header__setting">
+                            <?php if(!isset($_SESSION['userid'])){?>
+                                <a href="/member/login/login.php">로그인</a>
+                            <?php }else{ ?>
+                                <a href="/member/login/logout.php"><?php echo $login_username ?> 로그아웃</a>
+                            <?php } ?>
+                            <a href=""></a>
+                            <a href="<?php SERVER_ADDR ?>/index.php">메인페이지로 <i class="fas fa-caret-right arrow"></i></a>
+                        </div>
                     </div>
                     <div class="wrapper__right__body">
                         <iframe id="contentFrame" src="home.php?seq=<?php echo $row['seq'] ?>"></iframe>
