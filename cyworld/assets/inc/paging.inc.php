@@ -5,10 +5,10 @@
  * $viewCnt : 한 화면에 보이는 게시글의 수
  * $pageCnt : 전체 페이지의 수
  */
-if( !$pageNum || !$viewCnt || !$pageCnt ){
-    echo "페이징 처리를 위한 기본 변수 정의가 필요합니다.";
-    exit;
-}
+// if( !$pageNum || !$viewCnt || !$pageCnt ){
+//     echo "페이징 처리를 위한 기본 변수 정의가 필요합니다.";
+//     exit;
+// }
 ?>
 <style>
     .paging_wrap{ width: 473px; }
